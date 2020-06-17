@@ -3,10 +3,12 @@ package pageObjects;
 import org.apache.http.impl.conn.DefaultRoutePlanner;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends BasePage {
 
@@ -39,8 +41,12 @@ public class ProductPage extends BasePage {
     }
 
     public void selectColour() {
-        WebElement chooseColour = driver.findElement(WHITE_COLOUR_OPTION);
-        chooseColour.click();
+        new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until((WebDriver d) -> {
+            d.findElement(WHITE_COLOUR_OPTION).click();
+            return true;
+        });
+//        WebElement chooseColour = driver.findElement(WHITE_COLOUR_OPTION);
+//        chooseColour.click();
     }
 
 }

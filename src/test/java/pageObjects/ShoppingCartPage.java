@@ -2,9 +2,11 @@ package pageObjects;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -35,7 +37,11 @@ public class ShoppingCartPage extends BasePage {
 
 
     public void addToCart() {
-        waitAndClick(ADD_TO_CART_BUTTON);
+        new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until((WebDriver d) -> {
+            d.findElement(ADD_TO_CART_BUTTON).click();
+            return true;
+        });
+//        waitAndClick(ADD_TO_CART_BUTTON);
     }
 
     public void navigateToBasket() {
