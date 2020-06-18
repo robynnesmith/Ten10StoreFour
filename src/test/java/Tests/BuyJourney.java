@@ -21,6 +21,7 @@ public class BuyJourney {
     private SignInPage signInPage = new SignInPage(driver);
     private ProductPage productPage = new ProductPage(driver);
 
+    
     @Before
     public void individualSetUp() {
         driver.manage().deleteAllCookies();
