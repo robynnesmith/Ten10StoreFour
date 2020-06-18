@@ -1,12 +1,10 @@
 package Tests;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pageObjects.HomePage;
-import pageObjects.ProductPage;
-import pageObjects.ShoppingCartPage;
-import pageObjects.SignInPage;
+import pageObjects.*;
 
 import static Tests.TestSuite.driverFactory;
 
@@ -20,8 +18,9 @@ public class BuyJourney {
     private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
     private SignInPage signInPage = new SignInPage(driver);
     private ProductPage productPage = new ProductPage(driver);
+    private WomenPage womenPage = new WomenPage(driver);
 
-    
+
     @Before
     public void individualSetUp() {
         driver.manage().deleteAllCookies();
@@ -78,4 +77,42 @@ public class BuyJourney {
         homepage.addedToCart();
 
     }
+
+    @Test
+    public void useFiltersToFindDress() {
+        homepage.clickDresses();
+        womenPage.clickSize();
+        womenPage.clickColour();
+        womenPage.clickPrice();
+        womenPage.verifyCorrectProductDisplayed();
+    }
+
+    @Test
+    public void buyThreeOfAnItem() {
+        homepage.clickOnBlouse();
+        homepage.clickWhite();
+        homepage.selectQuantity();
+        homepage.addItemToCart();
+        homepage.addedToCart();
+    }
+
+    @Test
+    public void subscribeToNews(){
+        homepage.subscribe();
+        homepage.verifySubscribe();
+    }
+
+    @Test
+    public void clearFilters() {
+        homepage.clickDresses();
+        womenPage.clickSize();
+        womenPage.clickColour();
+        womenPage.clickPrice();
+        womenPage.clearAll();
+        womenPage.clearAll();
+        womenPage.clearAll();
+        driver.navigate().refresh();
+        womenPage.verifyAllProducts();
+    }
+
 }

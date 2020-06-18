@@ -2,10 +2,13 @@ package pageObjects;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by jack.forman on 22/10/2016.
@@ -18,14 +21,23 @@ public class HomePage extends BasePage {
 
     private static String URL = "http://3.11.70.191/index.php";
     private Actions actions = new Actions(driver);
+    private PersonalDetails pd = getPersonalDetails();
 
     private static final By SIGN_IN_BUTTON = By.cssSelector("#_desktop_user_info a");
     private static final By BLOUSE_IMAGE = By.cssSelector("img[alt = 'Blouse'");
     private static final By QUICK_VIEW_LINK = By.cssSelector(".quick-view");
-    private static final By SECOND_PRODUCT_IMAGE = By.cssSelector("div.products > article:nth-child(2) img");
-    private static final By SECOND_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(2) .quick-view");
+    private static final By SECOND_PRODUCT_IMAGE = By.cssSelector("div.products > article:nth-child(3) img");
+    private static final By SECOND_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(3) .quick-view");
     private static final By ADD_TO_CART_BUTTON = By.cssSelector(".btn.btn-primary.add-to-cart");
     private static final By MODAL_WINDOW = By.cssSelector("#myModalLabel");
+    private static final By WOMEN_LINK = By.cssSelector("#category-3 > a");
+    private static final By DRESSES_LINK = By.cssSelector("#category-8 > a");
+    private static final By WHITE_COLOUR = By.cssSelector("#group_3 > li:nth-child(1)");
+    private static final By QUANTITY_UP_BUTTON = By.cssSelector("button.btn.btn-touchspin.js-touchspin.bootstrap-touchspin-up");
+    private static final By BLOUSE_QUICKVIEW = By.cssSelector("article:nth-child(2) div.highlighted-informations.hidden-sm-down > a");
+    private static final By SUBSCRIBE_INPUT_BOX = By.cssSelector("#footer input[type=text]");
+    private static final By SUBSCRIPTON_MESSAGE = By.cssSelector("#footer div:nth-child(2) > p.alert.alert-success");
+    private static final By SUBSCRIBE_BUTTON = By.cssSelector("input.btn.btn-primary.float-xs-right.hidden-xs-down");
 
     public void goTo() {
         driver.get(URL);
@@ -74,4 +86,38 @@ public class HomePage extends BasePage {
         addItemToCart();
         addedToCart();
     }
+
+    public void clickDresses() {
+        actions.moveToElement(driver.findElement(WOMEN_LINK)).build().perform();
+        waitAndClick(DRESSES_LINK);
+    }
+
+    public void clickOnBlouse() {
+        actions.moveToElement(driver.findElement(BLOUSE_IMAGE)).build().perform();
+        waitAndClick(BLOUSE_QUICKVIEW);
+    }
+
+    public void selectQuantity() {
+        waitAndClick(QUANTITY_UP_BUTTON);
+        waitAndClick(QUANTITY_UP_BUTTON);
+    }
+
+    public void clickWhite() {
+        new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until((WebDriver d) -> {
+            d.findElement(WHITE_COLOUR).click();
+            return true;
+        });
+    }
+
+    public void subscribe() {
+        double number = Math.random();
+        findAndType(SUBSCRIBE_INPUT_BOX, String.format(number + "@test.com"));
+        waitAndClick(SUBSCRIBE_BUTTON);
+    }
+
+    public void verifySubscribe() {
+        WebElement message = driver.findElement(SUBSCRIPTON_MESSAGE);
+        Assert.assertEquals("You have successfully subscribed to this newsletter.", message.getText());
+    }
+
 }
