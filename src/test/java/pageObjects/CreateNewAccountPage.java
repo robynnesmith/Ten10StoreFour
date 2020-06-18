@@ -21,14 +21,34 @@ public class CreateNewAccountPage extends BasePage {
     private static final By PASSWORD_INPUT = By.name("password");
     private static final By SAVE_BUTTON = By.cssSelector(".form-control-submit");
     private static final By ASSERT_NUMERIC_NAME_ERROR = By.cssSelector(".help-block");
-//By.linkText("Invalid name");
-//By.cssSelector(".alert alert-danger");
+    private static final By ASSERT_lOGIN = By.className("account");
+    private static final By BIRTHDATE_INPUT = By.cssSelector("[name='birthday']");
+
+    public void enterInvalidBirthdate (String birthdate){
+        findAndType(BIRTHDATE_INPUT, birthdate);
+    }
+
     public void enterPersonalDetails() {
         PersonalDetails pd = getPersonalDetails();
         findAndType(FIRST_NAME_INPUT, pd.getFirstName());
         findAndType(LAST_NAME_INPUT, pd.getLastName());
         findAndType(EMAIL_INPUT, pd.getEmail());
         findAndType(PASSWORD_INPUT, pd.getPassword());
+    }
+
+    public void assertLogin () {
+        WebElement login = driver.findElement(ASSERT_lOGIN);
+        Assert.assertTrue(elementIsVisible(login));
+    }
+    public void enterPersonalDetailsPDFirstNameAndLastName(){
+        PersonalDetails pd = getPersonalDetails();
+    findAndType(FIRST_NAME_INPUT, pd.getFirstName());
+    findAndType(LAST_NAME_INPUT, pd.getLastName());
+
+    }
+
+    public void enterPersonalDetailsNumericPassword (String password){
+        findAndType(PASSWORD_INPUT, password);
     }
 public void enterPersonalDetailsNumbersFirstName (String firstname) {
         findAndType(FIRST_NAME_INPUT, firstname);
