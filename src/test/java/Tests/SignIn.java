@@ -89,4 +89,14 @@ public class SignIn {
         signInPage.userSignedOut();
 
     }
+
+    @Test
+    public void changeAccountPreference (){
+        homepage.navigateToSignInPage();
+        signInPage.login();
+        double num1 = Math.random();
+        signInPage.enterSignInEmailAddress(String.format(num1 + "@"  + "test.com"));
+        signInPage.pressSubscribe();
+        signInPage.assertSubscribeSuccess(); //make work
+    }
 }

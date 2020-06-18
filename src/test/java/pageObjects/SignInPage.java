@@ -32,6 +32,22 @@ public class SignInPage extends BasePage {
     private static final By FORGOTTEN_PASSWORD_LINK = By.cssSelector(".forgot-password");
     private static final By SEND_RESET_LINK_BUTTON = By.cssSelector(".forgotten-password button:first-of-type");
     private static final By NOTIFICATION_MESSAGE = By.cssSelector(".ps-alert-error");
+    private static final By PRESS_SUBSCRIBE = By.cssSelector("[name='submitNewsletter']");
+    private static final By ASSERT_SUBSCRIBE_SUCCESS = By.cssSelector(".alert alert-success");
+   //By.className("alert alert-success");
+   // By.cssSelector(".alert alert-success");
+   //By.linkText("You have successfully subscribed to this newsletter");
+
+    public void assertSubscribeSuccess (){ //make work
+        waitUntilInvisible(ASSERT_SUBSCRIBE_SUCCESS);
+        WebElement alertBox = driver.findElement(ASSERT_SUBSCRIBE_SUCCESS);
+        assertTrue(elementIsVisible(alertBox));
+    }
+
+
+    public void pressSubscribe (){
+        driver.findElement(PRESS_SUBSCRIBE).click();
+    }
 
     public void enterCreateNewAccountEmailAddress(String emailAddress) {
         findAndType(EMAIL_ADDRESS_INPUT_BOX, emailAddress);
@@ -58,6 +74,8 @@ public class SignInPage extends BasePage {
     public void enterSignInEmailAddress(String emailAddress) {
         findAndType(EMAIL_INPUT, emailAddress);
     }
+
+
 
     public void clickLogIn() {
         waitAndClick(SIGN_IN_BUTTON);
