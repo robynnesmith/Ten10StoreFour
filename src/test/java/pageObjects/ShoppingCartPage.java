@@ -34,7 +34,17 @@ public class ShoppingCartPage extends BasePage {
     private static final By PROCEED_TO_CHECKOUT_BUTTON = By.cssSelector(".checkout a");
     private static final By PERSONAL_INFORMATION_PAGE = By.id("checkout-personal-information-step");
     private static final By MODAL_PROCEED_TO_CHECKOUT_BUTTON = By.cssSelector(".cart-content-btn>a");
-
+    private static final By NEW_ADDRESS_LINK = By.cssSelector("#checkout-addresses-step > div > div > form > p.add-address > a");
+    private static final By NEW_ADD_FORM_ADDRESS_FIELD = By.cssSelector(".form-control[name='address1']");
+    private static final By NEW_ADD_FORM_CITY_FIELD = By.cssSelector(".form-control[name='city']");
+    private static final By NEW_ADD_FORM_STATE_DROPDOWN = By.cssSelector("div > .form-control.form-control-select[name='id_state']");
+    private static final By NEW_ADD_FORM_STATE_SELECTION = By.cssSelector(".form-control.form-control-select[name='id_state'] > option[value='5']");
+    private static final By NEW_ADD_FORM_ZIP_FIELD = By.cssSelector(".form-control[name='postcode']");
+    private static final By NEW_ADD_FORM_CONTINUE_BUTTON = By.cssSelector("button[class*='continue']");
+    private static final By EDIT_ADDRESS_BUTTON = By.cssSelector("section#checkout-addresses-step > h1 > span.step-edit.text-muted");
+    private static final By NEW_ADDRESS = By.cssSelector("div#delivery-addresses *:nth-child(2) > header");
+    private static final By DIFFERENT_SHIPPING_ADD_LINK = By.cssSelector("a[data-link-action='different-invoice-address']");
+    private static final By SELECT_SECOND_ADDRESS = By.cssSelector("div#invoice-addresses article:nth-child(2) > header > label > span.custom-radio");
 
     public void addToCart() {
         new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until((WebDriver d) -> {
@@ -94,8 +104,6 @@ public class ShoppingCartPage extends BasePage {
         Assert.assertTrue(elementIsVisible(personalInformationPage));
     }
 
-
-
     public void addItemToCart() {
         homePage.itemAddedToCart();
         navigateToBasket();
@@ -105,5 +113,47 @@ public class ShoppingCartPage extends BasePage {
     public void clickModalProceedToCheckout() {
         waitAndClick(MODAL_PROCEED_TO_CHECKOUT_BUTTON);
     }
+
+    public void clickAddNewAddress(){
+        waitAndClick(NEW_ADDRESS_LINK);
+    }
+
+    public void fillOutNewAddress(String address, String city, String zipCode){
+        findAndType(NEW_ADD_FORM_ADDRESS_FIELD, address);
+        findAndType(NEW_ADD_FORM_CITY_FIELD, city);
+        waitAndClick(NEW_ADD_FORM_STATE_DROPDOWN);
+        waitAndClick(NEW_ADD_FORM_STATE_SELECTION);
+        findAndType(NEW_ADD_FORM_ZIP_FIELD, zipCode);
+        waitAndClick(NEW_ADD_FORM_CONTINUE_BUTTON);
+    }
+
+
+    public void clickEditAddressButton(){
+        waitAndClick(EDIT_ADDRESS_BUTTON);
+    }
+
+    public void newAddressCreated(){
+        WebElement secondAddress = driver.findElement(NEW_ADDRESS);
+        Assert.assertTrue(elementIsVisible(secondAddress));
+    }
+
+    public void clickShippingAddressIsDifferent(){
+        waitAndClick(DIFFERENT_SHIPPING_ADD_LINK);
+    }
+
+    public void selectSecondAddress(){
+        waitAndClick(SELECT_SECOND_ADDRESS);
+    }
+
+    public void clickContinueButton(){
+        waitAndClick(NEW_ADD_FORM_CONTINUE_BUTTON);
+    }
+
+    public void verifyAddressWasSelected(){
+        waitAndClick(EDIT_ADDRESS_BUTTON);
+        
+    }
 }
+
+
 

@@ -122,14 +122,30 @@ public class ShoppingCart {
     */
 
     @Test
-    public void invoiceAddressDifferentToDelivery(){
+    public void newAddress(){
         homePage.navigateToSignInPage();
         signInPage.login();
         homePage.goTo();
         homePage.addItemToCart();
         basketpage.clickModalProceedToCheckout();
         basketpage.clickProceedToCheckout();
+        basketpage.clickAddNewAddress();
+        basketpage.fillOutNewAddress("321A","TESTER","12345");
+        basketpage.clickEditAddressButton();
+        basketpage.newAddressCreated();
+    }
 
+    @Test
+    public void shippingAddressDifferentToBilling(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        basketpage.clickModalProceedToCheckout();
+        basketpage.clickProceedToCheckout();
+        basketpage.clickShippingAddressIsDifferent();
+        basketpage.selectSecondAddress();
+        basketpage.clickContinueButton();
     }
 
 
