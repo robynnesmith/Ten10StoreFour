@@ -70,7 +70,23 @@ public class Registration {
         createNewAccountPage.enterPersonalDetails();
         createNewAccountPage.clickSave();
     }
-
+    //register using name with numeric values
+    //navigate to registration page
+    // *enter numeric values into name field
+ //*valid details in other fields
+ // *verify error message is displayed
+@Test
+public void registerUsingNumericValues () {
+        homepage.navigateToSignInPage();
+        signInPage.clickCreateAnAccount();
+        createNewAccountPage.enterPersonalDetailsNumbersFirstName("12345");
+        createNewAccountPage.enterPersonalDetailsNumberLastName("Nock");
+        createNewAccountPage.enterPersonalDetailsEmail("1234nock@test.com");
+        createNewAccountPage.enterPersonalDetailsPassword();
+        //createNewAccountPage.enterPersonalDetailsEmailAndPassword();
+        createNewAccountPage.clickSave();
+        createNewAccountPage.assertNumericErrorDisplay();
+}
 
     @After
     public void individualTearDown() {
