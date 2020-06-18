@@ -60,7 +60,6 @@ public class ShoppingCart {
         basketpage.increaseQuantity();
         basketpage.verifyQuantityUpdated();
         basketpage.verifyProductCountUpdated();
-
     }
 
     /**
@@ -111,6 +110,26 @@ public class ShoppingCart {
         checkoutPage.agreeToTerms();
         checkoutPage.confirmOrder();
         checkoutPage.orderConfirmationDisplayed();
+    }
+
+    /**
+     *Navigate to basket
+    *Click proceed to checkout
+    *Delivery Address Page is shown
+    *Make invoice address different
+    *Click continue button
+    *Verify shipping method displayed"
+    */
+
+    @Test
+    public void invoiceAddressDifferentToDelivery(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        basketpage.clickModalProceedToCheckout();
+        basketpage.clickProceedToCheckout();
+
     }
 
 
