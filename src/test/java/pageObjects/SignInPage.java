@@ -32,14 +32,38 @@ public class SignInPage extends BasePage {
     private static final By FORGOTTEN_PASSWORD_LINK = By.cssSelector(".forgot-password");
     private static final By SEND_RESET_LINK_BUTTON = By.cssSelector(".forgotten-password button:first-of-type");
     private static final By NOTIFICATION_MESSAGE = By.cssSelector(".ps-alert-error");
+    private static final By EMAIL_INPUT_SUBSCRIBE = By.cssSelector(".input-wrapper > input[name='email']"); ///#footer input[type=text]
     private static final By PRESS_SUBSCRIBE = By.cssSelector("[name='submitNewsletter']");
-    private static final By ASSERT_SUBSCRIBE_SUCCESS = By.cssSelector(".alert alert-success");
-   //By.className("alert alert-success");
-   // By.cssSelector(".alert alert-success");
-   //By.linkText("You have successfully subscribed to this newsletter");
+    private static final By ASSERT_SUBSCRIBE_SUCCESS = By.cssSelector(".alert.alert-success");
+    private static final By PRESS_IDENTITY_BUTTON = By.id("identity-link");
+    private static final By SAVE_PERSONAL_DETAILS_BUTTON = By.cssSelector(".btn.btn-primary.form-control-submit.float-xs-right");
+    private static final By PRESS_HOME = By.linkText("Home");
+
+public void pressHome(){
+    driver.findElement(PRESS_HOME).click();
+}
+
+
+public void savePersonalDetailsButton () {
+    driver.findElement(SAVE_PERSONAL_DETAILS_BUTTON).click();
+}
+
+    public void enterEmailSubscribe (String emailaddress){
+        findAndType(EMAIL_INPUT_SUBSCRIBE, emailaddress);
+    }
+
+
+
+   public void pressIdentityButton () {
+       driver.findElement(PRESS_IDENTITY_BUTTON).click();
+   }
+
+
+
+
 
     public void assertSubscribeSuccess (){ //make work
-        waitUntilInvisible(ASSERT_SUBSCRIBE_SUCCESS);
+       // waitUntilInvisible(ASSERT_SUBSCRIBE_SUCCESS);
         WebElement alertBox = driver.findElement(ASSERT_SUBSCRIBE_SUCCESS);
         assertTrue(elementIsVisible(alertBox));
     }

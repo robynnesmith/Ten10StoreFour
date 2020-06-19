@@ -95,8 +95,12 @@ public class SignIn {
         homepage.navigateToSignInPage();
         signInPage.login();
         double num1 = Math.random();
-        signInPage.enterSignInEmailAddress(String.format(num1 + "@"  + "test.com"));
+        signInPage.pressIdentityButton();
+        signInPage.enterPassword();
+       // signInPage.savePersonalDetailsButton();
+       // signInPage.pressHome();
+        signInPage.enterEmailSubscribe(String.format(num1 + "@"  + "test.com"));
         signInPage.pressSubscribe();
-        signInPage.assertSubscribeSuccess(); //make work
+        signInPage.assertSubscribeSuccess();
     }
 }
