@@ -127,4 +127,18 @@ public class SignIn {
         signInPage.verifyAddressSave();
 
     }
+
+    @Test
+    public void useUnregisteredEmailForgottenPassword (){
+        homepage.navigateToSignInPage();
+        signInPage.forgottenPassword();
+        signInPage.enterSignInEmailAddress("hello@test.com");
+        signInPage.clickRetrievePassword();
+        signInPage.verifyAlertSuccess();
+    }
+    @Test
+    public void existingAccountAddMessage (){
+        homepage.navigateToSignInPage();
+        homepage.
+    }
 }

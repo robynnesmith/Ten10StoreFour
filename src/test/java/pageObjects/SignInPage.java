@@ -49,6 +49,13 @@ public class SignInPage extends BasePage {
     private static final By ENTER_POSTCODE = By.cssSelector("[name='postcode']");
     private static final By PRESS_SAVE = By.cssSelector("button.btn.btn-primary.float-xs-right");
     private static final By VERIFY_ADDRESS_SAVE = By.cssSelector(".alert.alert-success");
+    private static final By VERIFY_ALERT_SUCCESS = By.cssSelector(".ps-alert-success");
+
+    public void verifyAlertSuccess (){
+        WebElement successfulalert = driver.findElement(VERIFY_ALERT_SUCCESS);
+        assertTrue(elementIsVisible(successfulalert));
+    }
+
 
     public void verifyAddressSave (){
         WebElement successalert = driver.findElement(VERIFY_ADDRESS_SAVE);
