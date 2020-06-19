@@ -42,6 +42,9 @@ public class HomePage extends BasePage {
     private static final By SUMMER_DRESSES_LINK = By.cssSelector("#category-11 > a");
     private static final By SEARCH_BAR = By.cssSelector("#search_widget > form > input.ui-autocomplete-input");
     private static final By SEARCH_BUTTON = By.cssSelector("#search_widget > form > button");
+    private static final By ANOTHER_PRODUCT_IMAGE = By.cssSelector("div.products > article:nth-child(4) img");
+    private static final By ANOTHER_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
+    private static final By CHECKOUT_BUTTON = By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a");
 
     public void goTo() {
         driver.get(URL);
@@ -135,4 +138,21 @@ public class HomePage extends BasePage {
         findAndType(SEARCH_BAR, "dress");
         waitAndClick(SEARCH_BUTTON);
     }
+
+    public void addDifferentItemToCart() {
+        WebElement firstProductImage = driver.findElement(ANOTHER_PRODUCT_IMAGE);
+        WebElement firstProductQuickView = driver.findElement(ANOTHER_PRODUCT_QUICKVIEW);
+        actions
+                .moveToElement(firstProductImage)
+                .click(firstProductQuickView)
+                .perform();
+        waitAndClick(ADD_TO_CART_BUTTON);
+    }
+
+    public void clickCheckout() {
+        waitAndClick(CHECKOUT_BUTTON);
+    }
+
+    public void clickProduct() {waitAndClick(ANOTHER_PRODUCT_IMAGE); }
+
 }

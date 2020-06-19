@@ -21,6 +21,7 @@ public class BuyJourney {
     private WomenPage womenPage = new WomenPage(driver);
     private OrdersPage orderspage = new OrdersPage(driver);
     private ContactUsPage contactuspage = new ContactUsPage(driver);
+    private CheckoutPage checkoutPage = new CheckoutPage(driver);
 
 
     @Before
@@ -148,5 +149,53 @@ public class BuyJourney {
         homepage.addItemToCart();
         homepage.addedToCart();
     }
+
+    @Test
+    public void addAnotherItem() {
+        homepage.addItemToCart();
+        homepage.goTo();
+        homepage.addDifferentItemToCart();
+        homepage.clickCheckout();
+        basketpage.verifyProductCountUpdated();
+    }
+
+    @Test
+    public void checkStockLevels() {
+        homepage.clickProduct();
+        productPage.inputLargeQuantity();
+        productPage.verifyOutOfStock();
+    }
+
+    @Test
+    public void checkCheckoutDisabledWhenOutOfStock() {
+        homepage.clickProduct();
+        productPage.inputLargeQuantity();
+        productPage.verifyButtonDisabled();
+    }
+
+    @Test
+    public void checkDifferentOptionsAvailable() {
+        productPage.navigatetoProductPage();
+        productPage.verifyOtherOptionsAvailable();
+    }
+
+    @Test
+    public void reorderPreviousPurchase() {
+        homepage.navigateToSignInPage();
+        signInPage.loginBuyJourneyTest();
+        orderspage.clickOrders();
+        orderspage.clickReorder();
+        checkoutPage.deliveryAddressSectionDisplayed();
+        checkoutPage.clickProceedToNextSection();
+        checkoutPage.shippingPageDisplayed();
+        checkoutPage.enterShippingComment();
+        checkoutPage.clickProceedToNextSection();
+        checkoutPage.paymentPageDisplayed();
+        checkoutPage.clickPayByBankWire();
+        checkoutPage.agreeToTerms();
+        checkoutPage.confirmOrder();
+        checkoutPage.orderConfirmationDisplayed();
+    }
+
 
 }

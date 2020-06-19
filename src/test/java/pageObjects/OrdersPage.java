@@ -19,6 +19,7 @@ public class OrdersPage extends BasePage {
     private static final By TEXT_BOX = By.cssSelector("#content textarea");
     private static final By GREEN_BOX = By.cssSelector("#notifications > div > article > ul > li");
     private static final By SEND_BUTTON = By.cssSelector("#content button");
+    private static final By REORDER_LINK = By.cssSelector("#content tr:nth-child(1) a:nth-child(2)");
 
     public void clickOrders() { waitAndClick(ORDERS_LINK); }
 
@@ -26,7 +27,7 @@ public class OrdersPage extends BasePage {
 
     public void selectProductOnOrdersPage() {
         Select product = new Select(driver.findElement(PRODUCT_DROPDOWN));
-        product.selectByVisibleText("Blouse - Size : S- Color : Black");
+        product.selectByVisibleText("Printed Summer Dress - Size : S- Color : Yellow");
     }
 
     public void writeMessage() {
@@ -38,5 +39,7 @@ public class OrdersPage extends BasePage {
         WebElement description = driver.findElement(GREEN_BOX);
         Assert.assertEquals("Message successfully sent", description.getText());
     }
+
+    public void clickReorder() { waitAndClick(REORDER_LINK);}
 
 }
