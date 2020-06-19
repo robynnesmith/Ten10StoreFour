@@ -55,19 +55,19 @@ public class ProductPage extends BasePage {
     public void inputLargeQuantity(){
         driver.findElement(QUANTITY_INPUT_BOX).sendKeys(Keys.BACK_SPACE);
         findAndType(QUANTITY_INPUT_BOX, "500");
-        waitAndClick(QUANTITY_INPUT_BOX);
+        boolean isInStock = driver.findElement(STOCK_TEXT).getText().equals(" In stock");
+        while (isInStock) {
+            selectQuantity();
+            isInStock = driver.findElement(STOCK_TEXT).getText().equals(" In stock");
+        }
     }
 
     public void verifyOutOfStock() {
-        wait.until(elementToBeClickable(STOCK_TEXT));
-        WebElement text = driver.findElement(STOCK_TEXT);
-        Assert.assertEquals("\uE14B There are not enough products in stock", text.getText());
+        Assert.assertEquals("\uE14B There are not enough products in stock", driver.findElement(STOCK_TEXT).getText());
     }
 
     public void verifyButtonDisabled() {
-        waitAndClick(ADD_TO_CART_BUTTON_ON_PRODUCT_PAGE);
-        WebElement popUp = driver.findElement(POP_UP);
-        Assert.assertFalse(elementIsVisible(popUp));
+        Assert.assertFalse(driver.findElement(ADD_TO_CART_BUTTON_ON_PRODUCT_PAGE).isEnabled());
     }
 
     public void verifyOtherOptionsAvailable() {

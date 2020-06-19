@@ -153,7 +153,7 @@ public class BuyJourney {
     @Test
     public void addAnotherItem() {
         homepage.addItemToCart();
-        homepage.goTo();
+        homepage.clickContinueShopping();
         homepage.addDifferentItemToCart();
         homepage.clickCheckout();
         basketpage.verifyProductCountUpdated();

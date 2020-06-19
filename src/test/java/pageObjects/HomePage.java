@@ -45,6 +45,7 @@ public class HomePage extends BasePage {
     private static final By ANOTHER_PRODUCT_IMAGE = By.cssSelector("div.products > article:nth-child(4) img");
     private static final By ANOTHER_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
     private static final By CHECKOUT_BUTTON = By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a");
+    private static final By CONTINUE_SHOPPING_BUTTON = By.cssSelector("#blockcart-modal div.col-md-7 > div > div > button");
 
     public void goTo() {
         driver.get(URL);
@@ -140,11 +141,11 @@ public class HomePage extends BasePage {
     }
 
     public void addDifferentItemToCart() {
-        WebElement firstProductImage = driver.findElement(ANOTHER_PRODUCT_IMAGE);
-        WebElement firstProductQuickView = driver.findElement(ANOTHER_PRODUCT_QUICKVIEW);
+        WebElement anotherProductImage = driver.findElement(ANOTHER_PRODUCT_IMAGE);
+        WebElement anotherProductQuickView = driver.findElement(ANOTHER_PRODUCT_QUICKVIEW);
         actions
-                .moveToElement(firstProductImage)
-                .click(firstProductQuickView)
+                .moveToElement(anotherProductImage)
+                .click(anotherProductQuickView)
                 .perform();
         waitAndClick(ADD_TO_CART_BUTTON);
     }
@@ -154,5 +155,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickProduct() {waitAndClick(ANOTHER_PRODUCT_IMAGE); }
+
+    public void clickContinueShopping() {waitAndClick(CONTINUE_SHOPPING_BUTTON); }
 
 }
