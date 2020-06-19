@@ -40,11 +40,23 @@ public class ShoppingCartPage extends BasePage {
     private static final By NEW_ADD_FORM_STATE_DROPDOWN = By.cssSelector("div > .form-control.form-control-select[name='id_state']");
     private static final By NEW_ADD_FORM_STATE_SELECTION = By.cssSelector(".form-control.form-control-select[name='id_state'] > option[value='5']");
     private static final By NEW_ADD_FORM_ZIP_FIELD = By.cssSelector(".form-control[name='postcode']");
-    private static final By NEW_ADD_FORM_CONTINUE_BUTTON = By.cssSelector("button[class*='continue']");
+    private static final By CONTINUE_BUTTON = By.cssSelector("button[class*='continue']");
     private static final By EDIT_ADDRESS_BUTTON = By.cssSelector("section#checkout-addresses-step > h1 > span.step-edit.text-muted");
     private static final By NEW_ADDRESS = By.cssSelector("div#delivery-addresses *:nth-child(2) > header");
     private static final By DIFFERENT_SHIPPING_ADD_LINK = By.cssSelector("a[data-link-action='different-invoice-address']");
     private static final By SELECT_SECOND_ADDRESS = By.cssSelector("div#invoice-addresses article:nth-child(2) > header > label > span.custom-radio");
+    private static final By ADDRESS_CREATED = By.cssSelector("div#invoice-addresses > article.address-item.selected");
+    private static final By DELIVERY_MESSAGE_BOX = By.cssSelector("#delivery_message");
+    private static final By CONT_BUTTON_SHIPPING_METHOD = By.cssSelector("#js-delivery > button");
+    private static final By EDIT_SHIP_METHOD_BUTTON = By.cssSelector("section#checkout-delivery-step > h1 > span.step-edit.text-muted");
+    private static final By EDIT_PERSONAL_INFO_BUTTON = By.cssSelector("section#checkout-personal-information-step > h1 > span.step-edit.text-muted");
+    private static final By LOG_OUT = By.cssSelector("section[id*=checkout-personal] > div.content p:nth-of-type(2) > a");
+    private static final By LOGGED_OUT = By.cssSelector(".user-info > a > span");
+    private static final By CART_EMPTY_TEXT = By.cssSelector("span.no-items");
+    private static final By PRINT_DRESS_PRICE = By.cssSelector("div.cart-overview > ul li:nth-of-type(1) > div [class*='right'] > div div:nth-child(2) div:nth-child(2) > span");
+    private static final By SECOND_PRINT_DRESS_PRICE = By.cssSelector("div.cart-overview > ul li:nth-of-type(2) > div [class*='right'] > div div:nth-child(2) div:nth-child(2) > span");
+    private static final By ITEM_AMOUNT_TEXT = By.cssSelector("div#cart-subtotal-products > span.label.js-subtotal");
+    private static final By SUBTOTAL_TEXT = By.cssSelector("div#cart-subtotal-products > span.value");
 
     public void addToCart() {
         new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until((WebDriver d) -> {
@@ -124,7 +136,7 @@ public class ShoppingCartPage extends BasePage {
         waitAndClick(NEW_ADD_FORM_STATE_DROPDOWN);
         waitAndClick(NEW_ADD_FORM_STATE_SELECTION);
         findAndType(NEW_ADD_FORM_ZIP_FIELD, zipCode);
-        waitAndClick(NEW_ADD_FORM_CONTINUE_BUTTON);
+        waitAndClick(CONTINUE_BUTTON);
     }
 
 
@@ -146,12 +158,66 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public void clickContinueButton(){
-        waitAndClick(NEW_ADD_FORM_CONTINUE_BUTTON);
+        waitAndClick(CONTINUE_BUTTON);
     }
 
     public void verifyAddressWasSelected(){
         waitAndClick(EDIT_ADDRESS_BUTTON);
-        
+
+        WebElement element = driver.findElement(ADDRESS_CREATED);
+        Assert.assertTrue(elementIsVisible(element));
+    }
+
+    public void addDeliveryMessage(String message){
+        findAndType(DELIVERY_MESSAGE_BOX, message);
+        waitAndClick(CONT_BUTTON_SHIPPING_METHOD);
+    }
+
+    public void verifyMessageWasCreated(){
+        waitAndClick(EDIT_SHIP_METHOD_BUTTON);
+        String text = driver.findElement(DELIVERY_MESSAGE_BOX).getText();
+        Assert.assertEquals("Hello, this is a test.", text);
+    }
+
+    public void logOut(){
+        waitAndClick(EDIT_PERSONAL_INFO_BUTTON);
+        waitAndClick(LOG_OUT);
+
+        String text = driver.findElement(LOGGED_OUT).getText();
+        Assert.assertEquals("Sign in", text);
+    }
+
+    public void verifyCartIsEmpty(){
+        String text = driver.findElement(CART_EMPTY_TEXT).getText();
+        Assert.assertEquals("There are no more items in your cart", text);
+    }
+
+
+    public void printDressPrice(){
+        String printDressPrice = driver.findElement(PRINT_DRESS_PRICE).getText();
+        Assert.assertEquals("$25.99", printDressPrice);
+    }
+
+    public void secondPrintDressPrice(){
+        String printDressPrice = driver.findElement(SECOND_PRINT_DRESS_PRICE).getText();
+        Assert.assertEquals("$50.99", printDressPrice);
+    }
+
+    public void itemCountCorrect(){
+        String text = driver.findElement(ITEM_AMOUNT_TEXT).getText();
+        Assert.assertEquals("2 items", text);
+    }
+
+    public void subTotalCorrect(){
+        String text = driver.findElement(SUBTOTAL_TEXT).getText();
+        Assert.assertEquals("$76.98", text);
+    }
+
+    public void verifyPricesAreCorrect(){
+        printDressPrice();
+        secondPrintDressPrice();
+        itemCountCorrect();
+        subTotalCorrect();
     }
 }
 

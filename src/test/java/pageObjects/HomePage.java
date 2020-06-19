@@ -26,6 +26,12 @@ public class HomePage extends BasePage {
     private static final By SECOND_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(3) .quick-view");
     private static final By ADD_TO_CART_BUTTON = By.cssSelector(".btn.btn-primary.add-to-cart");
     private static final By MODAL_WINDOW = By.cssSelector("#myModalLabel");
+    private static final By CLOSE_BUTTON_QUICKVIEW = By.cssSelector("button.close");
+    private static final By CLICK_QUICK_VIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
+    private static final By PRINTED_DRESS_IMG = By.cssSelector("div.products > article:nth-child(3) img");
+    private static final By TO_CHECKOUT_BUTTON = By.cssSelector(".cart-content-btn > a");
+
+
 
     public void goTo() {
         driver.get(URL);
@@ -73,5 +79,20 @@ public class HomePage extends BasePage {
         maximiseBrowserWindow();
         addItemToCart();
         addedToCart();
+    }
+
+    public void clickCloseItemQuickview(){
+        waitAndClick(CLOSE_BUTTON_QUICKVIEW);
+    }
+
+    public void addPrintedDressToCart(){
+        WebElement printedDressImage = driver.findElement(PRINTED_DRESS_IMG);
+        WebElement printedDressQuickView = driver.findElement(CLICK_QUICK_VIEW);
+        actions
+                .moveToElement(printedDressImage)
+                .click(printedDressQuickView)
+                .perform();
+        waitAndClick(ADD_TO_CART_BUTTON);
+        waitAndClick(TO_CHECKOUT_BUTTON);
     }
 }
