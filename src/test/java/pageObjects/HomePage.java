@@ -31,6 +31,7 @@ public class HomePage extends BasePage {
     private static final By ADD_TO_CART_BUTTON = By.cssSelector(".btn.btn-primary.add-to-cart");
     private static final By MODAL_WINDOW = By.cssSelector("#myModalLabel");
 
+
     private static final By CLOSE_BUTTON_QUICKVIEW = By.cssSelector("button.close");
     private static final By CLICK_QUICK_VIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
     private static final By PRINTED_DRESS_IMG = By.cssSelector("div.products > article:nth-child(3) img");
@@ -54,6 +55,7 @@ public class HomePage extends BasePage {
     private static final By ANOTHER_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
     private static final By CHECKOUT_BUTTON = By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a");
     private static final By CONTINUE_SHOPPING_BUTTON = By.cssSelector("#blockcart-modal div.col-md-7 > div > div > button");
+
 
 
     public void goTo() {

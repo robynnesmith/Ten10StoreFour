@@ -89,4 +89,67 @@ public class SignIn {
         signInPage.userSignedOut();
 
     }
+
+    @Test
+    public void changeAccountPreference (){
+        homepage.navigateToSignInPage();
+        signInPage.login();
+        double num1 = Math.random();
+        signInPage.pressIdentityButton();
+        signInPage.enterPassword();
+        signInPage.enterEmailSubscribe(String.format(num1 + "@"  + "test.com"));
+        signInPage.pressSubscribe();
+        signInPage.assertSubscribeSuccess();
+    }
+
+    @Test
+    public void signInInvalidPassword (){
+        homepage.navigateToSignInPage();
+        signInPage.enterSignInEmailAddress("test@sherwood.com");
+        double num1 = Math.random();
+        signInPage.enterInvalidPassword(String.format(num1 + "password"));
+        signInPage.clickLogIn();
+        signInPage.alreadyRegisteredAlertPresent();
+
+    }
+
+    @Test
+    public void addNewAddress (){
+        homepage.navigateToSignInPage();
+        signInPage.login();
+        signInPage.pressAddressesButton();
+        signInPage.createNewAddress();
+        signInPage.enterAliasName();
+        double num1 = Math.random();
+        signInPage.enterCompanyName(String.format(num1 + "Ten10"));
+        signInPage.detailsForNewAddress();
+        signInPage.pressSave();
+        signInPage.verifyAddressSave();
+
+    }
+
+    @Test
+    public void useUnregisteredEmailForgottenPassword (){
+        homepage.navigateToSignInPage();
+        signInPage.forgottenPassword();
+        signInPage.enterSignInEmailAddress("hello@test.com");
+        signInPage.clickRetrievePassword();
+        signInPage.verifyAlertSuccess();
+    }
+    @Test
+    public void existingAccountAddMessage (){
+        homepage.navigateToSignInPage();
+        signInPage.signInEmail("jonwhite@test.com");
+        signInPage.signInPassword("password");
+        signInPage.clickLogIn();
+        signInPage.orderHistoryButton();
+        signInPage.pressDetailsReorder();
+        signInPage.pressContinueButton();
+        signInPage.deliveryMessage("Please leave in shed");
+        //signInPage.continueFromShipping();
+        //signInPage.pressEdit();
+        //signInPage.continueShippingAssert();
+
+
+    }
 }
