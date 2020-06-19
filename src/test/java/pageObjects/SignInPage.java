@@ -86,6 +86,10 @@ public void savePersonalDetailsButton () {
         assertTrue(elementIsVisible(alertBox));
     }
 
+    public void enterInvalidPassword (String password){
+    findAndType(PASSWORD_INPUT,password);
+    }
+
     public void enterPassword() {
         findAndType(PASSWORD_INPUT, pd.getPassword());
     }

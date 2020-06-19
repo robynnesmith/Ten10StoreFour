@@ -97,10 +97,19 @@ public class SignIn {
         double num1 = Math.random();
         signInPage.pressIdentityButton();
         signInPage.enterPassword();
-       // signInPage.savePersonalDetailsButton();
-       // signInPage.pressHome();
         signInPage.enterEmailSubscribe(String.format(num1 + "@"  + "test.com"));
         signInPage.pressSubscribe();
         signInPage.assertSubscribeSuccess();
+    }
+
+    @Test
+    public void signInInvalidPassword (){
+        homepage.navigateToSignInPage();
+        signInPage.enterSignInEmailAddress("test@sherwood.com");
+        double num1 = Math.random();
+        signInPage.enterInvalidPassword(String.format(num1 + "password"));
+        signInPage.clickLogIn();
+        signInPage.alreadyRegisteredAlertPresent();
+
     }
 }
