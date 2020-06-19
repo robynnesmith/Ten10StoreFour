@@ -112,4 +112,19 @@ public class SignIn {
         signInPage.alreadyRegisteredAlertPresent();
 
     }
+
+    @Test
+    public void addNewAddress (){
+        homepage.navigateToSignInPage();
+        signInPage.login();
+        signInPage.pressAddressesButton();
+        signInPage.createNewAddress();
+        signInPage.enterAliasName();
+        double num1 = Math.random();
+        signInPage.enterCompanyName(String.format(num1 + "Ten10"));
+        signInPage.detailsForNewAddress();
+        signInPage.pressSave();
+        signInPage.verifyAddressSave();
+
+    }
 }

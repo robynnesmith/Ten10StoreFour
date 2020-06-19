@@ -38,6 +38,53 @@ public class SignInPage extends BasePage {
     private static final By PRESS_IDENTITY_BUTTON = By.id("identity-link");
     private static final By SAVE_PERSONAL_DETAILS_BUTTON = By.cssSelector(".btn.btn-primary.form-control-submit.float-xs-right");
     private static final By PRESS_HOME = By.linkText("Home");
+    private static final By PRESS_ADDRESSES_BUTTON = By.id("addresses-link");
+    private static final By CREATE_NEW_ADDRESS = By.cssSelector("[data-link-action='add-address']");
+    private static final By ALIAS_INPUT_BOX = By.name("alias");
+    private static final By COMPANY_INPUT_BOX = By.name("company");
+    private static final By ADDRESS_INPUT = By.name("address1");
+    private static final By CITY_INPUT = By.name("city");
+    private static final By STATE_DROPDOWN = By.cssSelector("[name='id_state']");
+    private static final By STATE_PICK = By.cssSelector("[value='26']");
+    private static final By ENTER_POSTCODE = By.cssSelector("[name='postcode']");
+    private static final By PRESS_SAVE = By.cssSelector("button.btn.btn-primary.float-xs-right");
+    private static final By VERIFY_ADDRESS_SAVE = By.cssSelector(".alert.alert-success");
+
+    public void verifyAddressSave (){
+        WebElement successalert = driver.findElement(VERIFY_ADDRESS_SAVE);
+        assertTrue(elementIsVisible(successalert));
+    }
+
+
+    public void pressSave () {
+        driver.findElement(PRESS_SAVE).click();
+    }
+
+
+   public void detailsForNewAddress (){
+       findAndType(ADDRESS_INPUT, pd.getAddress());
+      findAndType( CITY_INPUT, pd.getCity());
+      driver.findElement(STATE_DROPDOWN).click();
+      driver.findElement(STATE_PICK).click();
+      findAndType(ENTER_POSTCODE, pd.getPostcode());
+
+   }
+
+    public void enterCompanyName (String company) {
+        findAndType(COMPANY_INPUT_BOX, company);
+    }
+
+    public void enterAliasName () {
+        findAndType(ALIAS_INPUT_BOX, pd.getAliasName());
+    }
+
+    public void createNewAddress (){
+        driver.findElement(CREATE_NEW_ADDRESS).click();
+    }
+
+    public void pressAddressesButton (){
+        driver.findElement(PRESS_ADDRESSES_BUTTON).click();
+    }
 
 public void pressHome(){
     driver.findElement(PRESS_HOME).click();
@@ -62,7 +109,7 @@ public void savePersonalDetailsButton () {
 
 
 
-    public void assertSubscribeSuccess (){ //make work
+    public void assertSubscribeSuccess (){
        // waitUntilInvisible(ASSERT_SUBSCRIBE_SUCCESS);
         WebElement alertBox = driver.findElement(ASSERT_SUBSCRIBE_SUCCESS);
         assertTrue(elementIsVisible(alertBox));
