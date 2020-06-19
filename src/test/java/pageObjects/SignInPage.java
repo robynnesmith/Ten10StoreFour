@@ -116,4 +116,10 @@ public class SignInPage extends BasePage {
         clickRetrievePassword();
         confirmationMessage();
     }
+
+    public void loginBuyJourneyTest() {
+        enterSignInEmailAddress("dazza@test.com");
+        findAndType(PASSWORD_INPUT, "dazza");
+        clickLogIn();
+    }
 }
