@@ -139,6 +139,17 @@ public class SignIn {
     @Test
     public void existingAccountAddMessage (){
         homepage.navigateToSignInPage();
-        homepage.
+        signInPage.signInEmail("jonwhite@test.com");
+        signInPage.signInPassword("password");
+        signInPage.clickLogIn();
+        signInPage.orderHistoryButton();
+        signInPage.pressDetailsReorder();
+        signInPage.pressContinueButton();
+        signInPage.deliveryMessage("Please leave in shed");
+        //signInPage.continueFromShipping();
+        //signInPage.pressEdit();
+        //signInPage.continueShippingAssert();
+
+
     }
 }
