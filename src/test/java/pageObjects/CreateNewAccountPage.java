@@ -42,15 +42,15 @@ public class CreateNewAccountPage extends BasePage {
     }
     public void enterPersonalDetailsPDFirstNameAndLastName(){
         PersonalDetails pd = getPersonalDetails();
-    findAndType(FIRST_NAME_INPUT, pd.getFirstName());
-    findAndType(LAST_NAME_INPUT, pd.getLastName());
+        findAndType(FIRST_NAME_INPUT, pd.getFirstName());
+        findAndType(LAST_NAME_INPUT, pd.getLastName());
 
     }
 
     public void enterPersonalDetailsNumericPassword (String password){
         findAndType(PASSWORD_INPUT, password);
     }
-public void enterPersonalDetailsNumbersFirstName (String firstname) {
+    public void enterPersonalDetailsNumbersFirstName (String firstname) {
         findAndType(FIRST_NAME_INPUT, firstname);
     }
 
@@ -67,10 +67,10 @@ public void enterPersonalDetailsNumbersFirstName (String firstname) {
         findAndType(PASSWORD_INPUT, pd.getPassword());
     }
     //public void enterPersonalDetailsEmailAndPassword (){
-        //PersonalDetails pd = getPersonalDetails();
-       // findAndType(EMAIL_INPUT, pd.getEmail());
-        //findAndType(PASSWORD_INPUT, pd.getPassword());
-   // }
+    //PersonalDetails pd = getPersonalDetails();
+    // findAndType(EMAIL_INPUT, pd.getEmail());
+    //findAndType(PASSWORD_INPUT, pd.getPassword());
+    // }
     public void clickSave() {
         waitAndClick(SAVE_BUTTON);
     }

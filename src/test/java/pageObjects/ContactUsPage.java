@@ -21,10 +21,7 @@ public class ContactUsPage extends BasePage {
     public void enterMessage() {findAndType(MESSAGE_BOX, "message"); }
 
     public void clickSend() {
-//        WebElement button = driver.findElement(SEND_BUTTON);
-//        while(elementIsVisible(button)) {
-            waitAndClick(SEND_BUTTON);
-//        }
+        waitAndClick(SEND_BUTTON);
     }
 
     public void verifyMessageSent() {

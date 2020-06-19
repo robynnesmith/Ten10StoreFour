@@ -70,26 +70,26 @@ public class Registration {
     //register using name with numeric values
     //navigate to registration page
     // *enter numeric values into name field
- //*valid details in other fields
- // *verify error message is displayed
-@Test
-public void registerUsingNumericName () {
+    //*valid details in other fields
+    // *verify error message is displayed
+    @Test
+    public void registerUsingNumericName () {
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetailsNumbersFirstName("12345");
         createNewAccountPage.enterPersonalDetailsNumberLastName("Nock");
-    double num1 = Math.random();
+        double num1 = Math.random();
 
         createNewAccountPage.enterPersonalDetailsEmail(String.format(num1 + "@"  + "test.com"));
-    //createNewAccountPage.enterPersonalDetailsEmail("1234nock@test.com");
-    createNewAccountPage.enterPersonalDetailsPassword();
+        //createNewAccountPage.enterPersonalDetailsEmail("1234nock@test.com");
+        createNewAccountPage.enterPersonalDetailsPassword();
         //createNewAccountPage.enterPersonalDetailsEmailAndPassword();
         createNewAccountPage.clickSave();
         createNewAccountPage.assertNumericErrorDisplay();
-}
+    }
 
-@Test
-public void registerUsingNumericPassword (){
+    @Test
+    public void registerUsingNumericPassword (){
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
@@ -98,20 +98,20 @@ public void registerUsingNumericPassword (){
         createNewAccountPage.enterPersonalDetailsNumericPassword("123465");
         createNewAccountPage.clickSave();
         createNewAccountPage.assertLogin();
-}
+    }
 
-@Test
-public void registerWithInvalidBirthDate (){
+    @Test
+    public void registerWithInvalidBirthDate (){
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
         //createNewAccountPage.enterPersonalDetails();
-      createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
-      createNewAccountPage.enterPersonalDetailsEmail("thegreatness@test.com");
-      createNewAccountPage.enterPersonalDetailsPassword();
+        createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
+        createNewAccountPage.enterPersonalDetailsEmail("thegreatness@test.com");
+        createNewAccountPage.enterPersonalDetailsPassword();
         createNewAccountPage.enterInvalidBirthdate("13/1970/12");
         createNewAccountPage.clickSave();
         createNewAccountPage.assertNumericErrorDisplay();
-}
+    }
     @After
     public void individualTearDown() {
 
