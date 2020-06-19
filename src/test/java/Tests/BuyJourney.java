@@ -20,6 +20,7 @@ public class BuyJourney {
     private ProductPage productPage = new ProductPage(driver);
     private WomenPage womenPage = new WomenPage(driver);
     private OrdersPage orderspage = new OrdersPage(driver);
+    private ContactUsPage contactuspage = new ContactUsPage(driver);
 
 
     @Before
@@ -123,6 +124,29 @@ public class BuyJourney {
         womenPage.clearAll();
         driver.navigate().refresh();
         womenPage.verifyAllProducts();
+    }
+
+    @Test
+    public void contactWebsite() {
+        homepage.clickContactUs();
+        contactuspage.enterEmail();
+        contactuspage.enterMessage();
+        contactuspage.clickSend();
+        contactuspage.verifyMessageSent();
+    }
+
+    @Test
+    public void buySummerDress() {
+        homepage.clickSummerDresses();
+        homepage.addItemToCart();
+        homepage.addedToCart();
+    }
+
+    @Test
+    public void buyItemViaSearch() {
+        homepage.searchForDress();
+        homepage.addItemToCart();
+        homepage.addedToCart();
     }
 
 }

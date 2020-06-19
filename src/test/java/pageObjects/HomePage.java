@@ -38,6 +38,10 @@ public class HomePage extends BasePage {
     private static final By SUBSCRIBE_INPUT_BOX = By.cssSelector("#footer input[type=text]");
     private static final By SUBSCRIPTON_MESSAGE = By.cssSelector("#footer div:nth-child(2) > p.alert.alert-success");
     private static final By SUBSCRIBE_BUTTON = By.cssSelector("input.btn.btn-primary.float-xs-right.hidden-xs-down");
+    private static final By CONTACT_US_LINK = By.cssSelector("#contact-link > a");
+    private static final By SUMMER_DRESSES_LINK = By.cssSelector("#category-11 > a");
+    private static final By SEARCH_BAR = By.cssSelector("#search_widget > form > input.ui-autocomplete-input");
+    private static final By SEARCH_BUTTON = By.cssSelector("#search_widget > form > button");
 
     public void goTo() {
         driver.get(URL);
@@ -120,4 +124,15 @@ public class HomePage extends BasePage {
         Assert.assertEquals("You have successfully subscribed to this newsletter.", message.getText());
     }
 
+    public void clickContactUs() { waitAndClick(CONTACT_US_LINK); }
+
+    public void clickSummerDresses() {
+        actions.moveToElement(driver.findElement(WOMEN_LINK)).build().perform();
+        waitAndClick(SUMMER_DRESSES_LINK);
+    }
+
+    public void searchForDress() {
+        findAndType(SEARCH_BAR, "dress");
+        waitAndClick(SEARCH_BUTTON);
+    }
 }
