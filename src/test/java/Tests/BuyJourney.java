@@ -19,6 +19,7 @@ public class BuyJourney {
     private SignInPage signInPage = new SignInPage(driver);
     private ProductPage productPage = new ProductPage(driver);
     private WomenPage womenPage = new WomenPage(driver);
+    private OrdersPage orderspage = new OrdersPage(driver);
 
 
     @Before
@@ -79,6 +80,17 @@ public class BuyJourney {
     }
 
     @Test
+    public void addMessageToPreviousOrder() {
+        homepage.navigateToSignInPage();
+        signInPage.loginBuyJourneyTest();
+        orderspage.clickOrders();
+        orderspage.clickDetails();
+        orderspage.selectProductOnOrdersPage();
+        orderspage.writeMessage();
+        orderspage.verifyMessageSent();
+    }
+
+    @Test
     public void useFiltersToFindDress() {
         homepage.clickDresses();
         womenPage.clickSize();
@@ -108,8 +120,6 @@ public class BuyJourney {
         womenPage.clickSize();
         womenPage.clickColour();
         womenPage.clickPrice();
-        womenPage.clearAll();
-        womenPage.clearAll();
         womenPage.clearAll();
         driver.navigate().refresh();
         womenPage.verifyAllProducts();

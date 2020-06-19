@@ -29,7 +29,12 @@ public class WomenPage extends BasePage {
         Assert.assertEquals("Printed Dress", description.getText());
     }
 
-    public void clearAll() { waitAndClick(CLEAR_ALL_BUTTON); }
+    public void clearAll() {
+        driver.get("http://3.11.70.191/index.php?controller=category&id_category=8");
+//        while (!driver.getCurrentUrl().equals("http://3.11.70.191/index.php?controller=category&id_category=8")) {
+//            waitAndClick(CLEAR_ALL_BUTTON);
+//        }
+    }
 
     public void verifyAllProducts() {
         WebElement description = driver.findElement(TEXT);
