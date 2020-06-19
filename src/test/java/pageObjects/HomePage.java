@@ -30,6 +30,14 @@ public class HomePage extends BasePage {
     private static final By SECOND_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(3) .quick-view");
     private static final By ADD_TO_CART_BUTTON = By.cssSelector(".btn.btn-primary.add-to-cart");
     private static final By MODAL_WINDOW = By.cssSelector("#myModalLabel");
+
+    private static final By CLOSE_BUTTON_QUICKVIEW = By.cssSelector("button.close");
+    private static final By CLICK_QUICK_VIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
+    private static final By PRINTED_DRESS_IMG = By.cssSelector("div.products > article:nth-child(3) img");
+    private static final By TO_CHECKOUT_BUTTON = By.cssSelector(".cart-content-btn > a");
+
+
+
     private static final By WOMEN_LINK = By.cssSelector("#category-3 > a");
     private static final By DRESSES_LINK = By.cssSelector("#category-8 > a");
     private static final By WHITE_COLOUR = By.cssSelector("#group_3 > li:nth-child(1)");
@@ -46,6 +54,7 @@ public class HomePage extends BasePage {
     private static final By ANOTHER_PRODUCT_QUICKVIEW = By.cssSelector("div.products > article:nth-child(4) .quick-view");
     private static final By CHECKOUT_BUTTON = By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a");
     private static final By CONTINUE_SHOPPING_BUTTON = By.cssSelector("#blockcart-modal div.col-md-7 > div > div > button");
+
 
     public void goTo() {
         driver.get(URL);
@@ -93,6 +102,22 @@ public class HomePage extends BasePage {
         maximiseBrowserWindow();
         addItemToCart();
         addedToCart();
+    }
+
+
+    public void clickCloseItemQuickview(){
+        waitAndClick(CLOSE_BUTTON_QUICKVIEW);
+    }
+
+    public void addPrintedDressToCart(){
+        WebElement printedDressImage = driver.findElement(PRINTED_DRESS_IMG);
+        WebElement printedDressQuickView = driver.findElement(CLICK_QUICK_VIEW);
+        actions
+                .moveToElement(printedDressImage)
+                .click(printedDressQuickView)
+                .perform();
+        waitAndClick(ADD_TO_CART_BUTTON);
+        waitAndClick(TO_CHECKOUT_BUTTON);
     }
 
     public void clickDresses() {
@@ -157,5 +182,6 @@ public class HomePage extends BasePage {
     public void clickProduct() {waitAndClick(ANOTHER_PRODUCT_IMAGE); }
 
     public void clickContinueShopping() {waitAndClick(CONTINUE_SHOPPING_BUTTON); }
+
 
 }

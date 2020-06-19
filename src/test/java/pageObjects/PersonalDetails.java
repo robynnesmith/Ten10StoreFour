@@ -27,6 +27,7 @@ public class PersonalDetails {
         this.aliasName = aliasName;
     }
 
+
     public String getFirstName() {
         return firstName;
     }
@@ -70,4 +71,6 @@ public class PersonalDetails {
     public String getAliasName() {
         return aliasName;
     }
+
+
 }
