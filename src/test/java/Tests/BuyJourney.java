@@ -1,12 +1,10 @@
 package Tests;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pageObjects.HomePage;
-import pageObjects.ProductPage;
-import pageObjects.ShoppingCartPage;
-import pageObjects.SignInPage;
+import pageObjects.*;
 
 import static Tests.TestSuite.driverFactory;
 
@@ -20,6 +18,11 @@ public class BuyJourney {
     private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
     private SignInPage signInPage = new SignInPage(driver);
     private ProductPage productPage = new ProductPage(driver);
+    private WomenPage womenPage = new WomenPage(driver);
+    private OrdersPage orderspage = new OrdersPage(driver);
+    private ContactUsPage contactuspage = new ContactUsPage(driver);
+    private CheckoutPage checkoutPage = new CheckoutPage(driver);
+
 
     @Before
     public void individualSetUp() {
@@ -77,4 +80,122 @@ public class BuyJourney {
         homepage.addedToCart();
 
     }
+
+    @Test
+    public void addMessageToPreviousOrder() {
+        homepage.navigateToSignInPage();
+        signInPage.loginBuyJourneyTest();
+        orderspage.clickOrders();
+        orderspage.clickDetails();
+        orderspage.selectProductOnOrdersPage();
+        orderspage.writeMessage();
+        orderspage.verifyMessageSent();
+    }
+
+    @Test
+    public void useFiltersToFindDress() {
+        homepage.clickDresses();
+        womenPage.clickSize();
+        womenPage.clickColour();
+        womenPage.clickPrice();
+        womenPage.verifyCorrectProductDisplayed();
+    }
+
+    @Test
+    public void buyThreeOfAnItem() {
+        homepage.clickOnBlouse();
+        homepage.clickWhite();
+        homepage.selectQuantity();
+        homepage.addItemToCart();
+        homepage.addedToCart();
+    }
+
+    @Test
+    public void subscribeToNews(){
+        homepage.subscribe();
+        homepage.verifySubscribe();
+    }
+
+    @Test
+    public void clearFilters() {
+        homepage.clickDresses();
+        womenPage.clickSize();
+        womenPage.clickColour();
+        womenPage.clickPrice();
+        womenPage.clearAll();
+        driver.navigate().refresh();
+        womenPage.verifyAllProducts();
+    }
+
+    @Test
+    public void contactWebsite() {
+        homepage.clickContactUs();
+        contactuspage.enterEmail();
+        contactuspage.enterMessage();
+        contactuspage.clickSend();
+        contactuspage.verifyMessageSent();
+    }
+
+    @Test
+    public void buySummerDress() {
+        homepage.clickSummerDresses();
+        homepage.addItemToCart();
+        homepage.addedToCart();
+    }
+
+    @Test
+    public void buyItemViaSearch() {
+        homepage.searchForDress();
+        homepage.addItemToCart();
+        homepage.addedToCart();
+    }
+
+    @Test
+    public void addAnotherItem() {
+        homepage.addItemToCart();
+        homepage.clickContinueShopping();
+        homepage.addDifferentItemToCart();
+        homepage.clickCheckout();
+        basketpage.verifyProductCountUpdated();
+    }
+
+    @Test
+    public void checkStockLevels() {
+        homepage.clickProduct();
+        productPage.inputLargeQuantity();
+        productPage.verifyOutOfStock();
+    }
+
+    @Test
+    public void checkCheckoutDisabledWhenOutOfStock() {
+        homepage.clickProduct();
+        productPage.inputLargeQuantity();
+        productPage.verifyButtonDisabled();
+    }
+
+    @Test
+    public void checkDifferentOptionsAvailable() {
+        productPage.navigatetoProductPage();
+        productPage.verifyOtherOptionsAvailable();
+    }
+
+    @Test
+    public void reorderPreviousPurchase() {
+        homepage.navigateToSignInPage();
+        signInPage.loginBuyJourneyTest();
+        orderspage.clickOrders();
+        orderspage.clickReorder();
+        checkoutPage.deliveryAddressSectionDisplayed();
+        checkoutPage.clickProceedToNextSection();
+        checkoutPage.shippingPageDisplayed();
+        checkoutPage.enterShippingComment();
+        checkoutPage.clickProceedToNextSection();
+        checkoutPage.paymentPageDisplayed();
+        checkoutPage.clickPayByBankWire();
+        checkoutPage.agreeToTerms();
+        checkoutPage.confirmOrder();
+        checkoutPage.orderConfirmationDisplayed();
+    }
+
+
 }

@@ -60,7 +60,6 @@ public class ShoppingCart {
         basketpage.increaseQuantity();
         basketpage.verifyQuantityUpdated();
         basketpage.verifyProductCountUpdated();
-
     }
 
     /**
@@ -113,5 +112,106 @@ public class ShoppingCart {
         checkoutPage.orderConfirmationDisplayed();
     }
 
+    /**
+     * Navigate to basket
+     * Proceed to checkout
+     * Click "+ new address"
+     * Fill out address form
+     * Verify new address is created
+    */
+
+    @Test
+    public void newAddress(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        basketpage.clickModalProceedToCheckout();
+        basketpage.clickProceedToCheckout();
+        basketpage.clickAddNewAddress();
+        basketpage.fillOutNewAddress("321A","TESTER","12345");
+        basketpage.clickEditAddressButton();
+        basketpage.newAddressCreated();
+    }
+
+    /**
+     *Navigate to basket
+     *Click proceed to checkout
+     *Delivery Address Page is shown
+     *Make invoice address different
+     *Click continue button
+     *Verify shipping method displayed"
+     */
+
+    @Test
+    public void shippingAddressDifferentToBilling(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        basketpage.clickModalProceedToCheckout();
+        basketpage.clickProceedToCheckout();
+        basketpage.clickShippingAddressIsDifferent();
+        basketpage.selectSecondAddress();
+        basketpage.clickContinueButton();
+        basketpage.verifyAddressWasSelected();
+    }
+
+    /**
+     * "* Navigate to basket
+     * * Proceed to checkout
+     * * Select Address
+     * * Write a comment in 'Shipping Method' section
+     * * Verify comment has been added"
+     */
+
+    @Test
+    public void addingMessageToOrder(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        basketpage.clickModalProceedToCheckout();
+        basketpage.clickProceedToCheckout();
+        basketpage.clickContinueButton();
+        basketpage.addDeliveryMessage("Hello, this is a test.");
+        basketpage.verifyMessageWasCreated();
+    }
+
+    /**
+     *Navigate to basket
+     *Click proceed to checkout
+     *Logout
+     *Verify cart emptied when sign back in.
+     */
+
+    @Test
+    public void cartIsEmptiedAfterLogOut(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        basketpage.clickModalProceedToCheckout();
+        basketpage.clickProceedToCheckout();
+        basketpage.logOut();
+        basketpage.verifyCartIsEmpty();
+    }
+
+    /**
+     *Navigate to basket
+     *Verify that all items are displayed
+     *Verify that product counter and prices are correct
+     */
+
+    @Test
+    public void multipleItemsDisplayedCorrectly(){
+        homePage.navigateToSignInPage();
+        signInPage.login();
+        homePage.goTo();
+        homePage.addItemToCart();
+        homePage.goTo();
+        homePage.addPrintedDressToCart();
+        basketpage.verifyPricesAreCorrect();
+    }
 
 }

@@ -1,9 +1,6 @@
 package Tests;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
@@ -73,21 +70,48 @@ public class Registration {
     //register using name with numeric values
     //navigate to registration page
     // *enter numeric values into name field
- //*valid details in other fields
- // *verify error message is displayed
-@Test
-public void registerUsingNumericValues () {
+    //*valid details in other fields
+    // *verify error message is displayed
+    @Test
+    public void registerUsingNumericName () {
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetailsNumbersFirstName("12345");
         createNewAccountPage.enterPersonalDetailsNumberLastName("Nock");
-        createNewAccountPage.enterPersonalDetailsEmail("1234nock@test.com");
+        double num1 = Math.random();
+
+        createNewAccountPage.enterPersonalDetailsEmail(String.format(num1 + "@"  + "test.com"));
+        //createNewAccountPage.enterPersonalDetailsEmail("1234nock@test.com");
         createNewAccountPage.enterPersonalDetailsPassword();
         //createNewAccountPage.enterPersonalDetailsEmailAndPassword();
         createNewAccountPage.clickSave();
         createNewAccountPage.assertNumericErrorDisplay();
-}
+    }
 
+    @Test
+    public void registerUsingNumericPassword (){
+        homepage.navigateToSignInPage();
+        signInPage.clickCreateAnAccount();
+        createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
+        double num1 = Math.random();
+        createNewAccountPage.enterPersonalDetailsEmail(String.format(num1 + "@test.com"));
+        createNewAccountPage.enterPersonalDetailsNumericPassword("123465");
+        createNewAccountPage.clickSave();
+        createNewAccountPage.assertLogin();
+    }
+
+    @Test
+    public void registerWithInvalidBirthDate (){
+        homepage.navigateToSignInPage();
+        signInPage.clickCreateAnAccount();
+        //createNewAccountPage.enterPersonalDetails();
+        createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
+        createNewAccountPage.enterPersonalDetailsEmail("thegreatness@test.com");
+        createNewAccountPage.enterPersonalDetailsPassword();
+        createNewAccountPage.enterInvalidBirthdate("13/1970/12");
+        createNewAccountPage.clickSave();
+        createNewAccountPage.assertNumericErrorDisplay();
+    }
     @After
     public void individualTearDown() {
 
