@@ -2,6 +2,7 @@ Feature: Sign in
 
   Scenario: Sign in as registered user
     Given the user is on the "sign in" page
+    When the user signs in with email and password
     Then the user is signed in
 
 
@@ -19,18 +20,18 @@ Feature: Sign in
         Scenario: Sign out
           Given the user is on the "sign in" page
           When the user signs out
-          Then then verify user signed out
+          Then verify user signed out
 
           Scenario:Change account preferences
             Given the user is signed into their account
             When the user changes account settings to opt in to offers and newsletter
-            Then the "updated account" alert is displayed
+            Then the updated account alert is displayed
 
             Scenario: Sign in Using invalid password
               Given the user is on the "sign in" page
               When the user inputs valid email
               And enters invalid password
-              Then the invalid "password" alert displayed
+              Then the invalid password alert displayed
 
               Scenario: Add new address to account
                 Given the user is on the account page
@@ -41,9 +42,9 @@ Feature: Sign in
                 Scenario: signed in with existing account details and have an existing order
                   Given the user is signed into their account
                   When the user navigates to a pre-existing order and adds a message
-                  Then the "updated order" alert is displayed
+                  Then the updated order alert is displayed
 
                   Scenario: Use and unregistered email to get forgotten password
                     Given the user is on the "sign in" page
-                    When the user inputs and "unregistered" email in the forgotten password input
-                    Then the unregistered "email" alert is displayed
+                    When the user inputs and unregistered email in the forgotten password input
+                    Then the unregistered email alert is displayed

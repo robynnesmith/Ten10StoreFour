@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-06-23T13:49:28.323Z",
+        "start_timestamp": "2020-06-23T15:17:33.067Z",
         "line": 3,
         "name": "Register user with already registered email address",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8235012500,
+              "duration": 9026684700,
               "status": "passed"
             },
             "line": 4,
@@ -31,7 +31,7 @@
           },
           {
             "result": {
-              "duration": 875749500,
+              "duration": 1315639800,
               "status": "passed"
             },
             "line": 5,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 42605600,
+              "duration": 40988000,
               "status": "passed"
             },
             "line": 6,
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:49:37.595Z",
+        "start_timestamp": "2020-06-23T15:17:43.568Z",
         "line": 8,
         "name": "Register as new user",
         "description": "",
@@ -66,7 +66,7 @@
         "steps": [
           {
             "result": {
-              "duration": 822719900,
+              "duration": 525003300,
               "status": "passed"
             },
             "line": 9,
@@ -84,7 +84,7 @@
           },
           {
             "result": {
-              "duration": 589633900,
+              "duration": 828813400,
               "status": "passed"
             },
             "line": 10,
@@ -96,7 +96,7 @@
           },
           {
             "result": {
-              "duration": 302673400,
+              "duration": 285949400,
               "status": "passed"
             },
             "line": 11,
@@ -109,7 +109,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:49:39.319Z",
+        "start_timestamp": "2020-06-23T15:17:45.215Z",
         "line": 14,
         "name": "Register using name with numeric value",
         "description": "",
@@ -119,7 +119,7 @@
         "steps": [
           {
             "result": {
-              "duration": 940043500,
+              "duration": 509657400,
               "status": "passed"
             },
             "line": 15,
@@ -137,7 +137,7 @@
           },
           {
             "result": {
-              "duration": 598113100,
+              "duration": 933767000,
               "status": "passed"
             },
             "line": 16,
@@ -149,7 +149,7 @@
           },
           {
             "result": {
-              "duration": 579796700,
+              "duration": 461438500,
               "status": "passed"
             },
             "line": 17,
@@ -161,7 +161,7 @@
           },
           {
             "result": {
-              "duration": 51990900,
+              "duration": 36997100,
               "status": "passed"
             },
             "line": 18,
@@ -174,7 +174,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:49:41.501Z",
+        "start_timestamp": "2020-06-23T15:17:47.168Z",
         "line": 20,
         "name": "Register using numeric values for password",
         "description": "",
@@ -184,7 +184,7 @@
         "steps": [
           {
             "result": {
-              "duration": 924102800,
+              "duration": 647046800,
               "status": "passed"
             },
             "line": 21,
@@ -202,7 +202,7 @@
           },
           {
             "result": {
-              "duration": 614911400,
+              "duration": 779354300,
               "status": "passed"
             },
             "line": 22,
@@ -214,7 +214,7 @@
           },
           {
             "result": {
-              "duration": 368027400,
+              "duration": 387509900,
               "status": "passed"
             },
             "line": 23,
@@ -226,7 +226,7 @@
           },
           {
             "result": {
-              "duration": 52008800,
+              "duration": 35936700,
               "status": "passed"
             },
             "line": 24,
@@ -239,7 +239,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:49:43.469Z",
+        "start_timestamp": "2020-06-23T15:17:49.032Z",
         "line": 26,
         "name": "Register with invalid birthdate",
         "description": "",
@@ -249,7 +249,7 @@
         "steps": [
           {
             "result": {
-              "duration": 822895500,
+              "duration": 525383000,
               "status": "passed"
             },
             "line": 27,
@@ -267,7 +267,7 @@
           },
           {
             "result": {
-              "duration": 915333200,
+              "duration": 1067045100,
               "status": "passed"
             },
             "line": 28,
@@ -279,7 +279,7 @@
           },
           {
             "result": {
-              "duration": 280002600,
+              "duration": 320992800,
               "status": "passed"
             },
             "line": 29,
@@ -291,7 +291,7 @@
           },
           {
             "result": {
-              "duration": 32003800,
+              "duration": 52995900,
               "status": "passed"
             },
             "line": 30,
@@ -315,7 +315,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-06-23T13:49:45.525Z",
+        "start_timestamp": "2020-06-23T15:17:51.006Z",
         "line": 3,
         "name": "Sign in as registered user",
         "description": "",
@@ -325,7 +325,7 @@
         "steps": [
           {
             "result": {
-              "duration": 833558600,
+              "duration": 543533200,
               "status": "passed"
             },
             "line": 4,
@@ -343,11 +343,22 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: [name\u003d\u0027submitLogin\u0027] (tried for 20 second(s) with 500 MILLISECONDS interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\r\n\tat pageObjects.BasePage.waitAndClick(BasePage.java:29)\r\n\tat pageObjects.SignInPage.clickLogIn(SignInPage.java:211)\r\n\tat pageObjects.SignInPage.login(SignInPage.java:250)\r\n\tat stepdefs.SignInStepDef.userIsSignedIn(SignInStepDef.java:31)\r\n\tat ✽.the user is signed in(file:///C:/Users/amelia.nock/Documents/Ten10StoreFour/src/test/resources/features/signin.feature:5)\r\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: [name\u003d\u0027submitLogin\u0027]\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027T10-ACA-1055\u0027, ip: \u0027192.168.1.96\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.5\u0027\nDriver info: driver.version: unknown\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\r\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\r\n\tat pageObjects.BasePage.waitAndClick(BasePage.java:29)\r\n\tat pageObjects.SignInPage.clickLogIn(SignInPage.java:211)\r\n\tat pageObjects.SignInPage.login(SignInPage.java:250)\r\n\tat stepdefs.SignInStepDef.userIsSignedIn(SignInStepDef.java:31)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:27)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:49)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:51)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:67)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)\r\n",
-              "duration": 20705036800,
-              "status": "failed"
+              "duration": 1076300500,
+              "status": "passed"
             },
             "line": 5,
+            "name": "the user signs in with email and password",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userSignsinWithEmailAndPassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 67001500,
+              "status": "passed"
+            },
+            "line": 6,
             "name": "the user is signed in",
             "match": {
               "location": "stepdefs.SignInStepDef.userIsSignedIn()"
@@ -357,8 +368,8 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:07.106Z",
-        "line": 9,
+        "start_timestamp": "2020-06-23T15:17:52.702Z",
+        "line": 10,
         "name": "Sign in as unregistered user",
         "description": "",
         "id": "sign-in;sign-in-as-unregistered-user",
@@ -367,10 +378,10 @@
         "steps": [
           {
             "result": {
-              "duration": 941286700,
+              "duration": 817394700,
               "status": "passed"
             },
-            "line": 10,
+            "line": 11,
             "name": "the user is on the \"sign in\" page",
             "match": {
               "arguments": [
@@ -385,27 +396,33 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 552512300,
+              "status": "passed"
             },
-            "line": 11,
+            "line": 12,
             "name": "the user fills in sign in details with unregistered email",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.signsInWithUnregisteredEmail()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 25999100,
+              "status": "passed"
             },
-            "line": 12,
+            "line": 13,
             "name": "error message is displayed",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.errorMessageIsDisplayed()"
+            },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:08.068Z",
-        "line": 14,
+        "start_timestamp": "2020-06-23T15:17:54.104Z",
+        "line": 15,
         "name": "Forgotten Password",
         "description": "",
         "id": "sign-in;forgotten-password",
@@ -414,10 +431,10 @@
         "steps": [
           {
             "result": {
-              "duration": 870914900,
+              "duration": 568477800,
               "status": "passed"
             },
-            "line": 15,
+            "line": 16,
             "name": "the user is on the \"sign in\" page",
             "match": {
               "arguments": [
@@ -432,27 +449,33 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 651776600,
+              "status": "passed"
             },
-            "line": 16,
+            "line": 17,
             "name": "the user clicks forgotten password",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.userClicksForgottenPassword()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 33002000,
+              "status": "passed"
             },
-            "line": 17,
+            "line": 18,
             "name": "Confirmation message is displayed",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.confirmation_message_is_displayed()"
+            },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:08.964Z",
-        "line": 19,
+        "start_timestamp": "2020-06-23T15:17:55.361Z",
+        "line": 20,
         "name": "Sign out",
         "description": "",
         "id": "sign-in;sign-out",
@@ -461,10 +484,10 @@
         "steps": [
           {
             "result": {
-              "duration": 889792900,
+              "duration": 511257700,
               "status": "passed"
             },
-            "line": 20,
+            "line": 21,
             "name": "the user is on the \"sign in\" page",
             "match": {
               "arguments": [
@@ -479,27 +502,33 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 1164754500,
+              "status": "passed"
             },
-            "line": 21,
+            "line": 22,
             "name": "the user signs out",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.userSignsOut()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 192954800,
+              "status": "passed"
             },
-            "line": 22,
-            "name": "then verify user signed out",
-            "match": {},
+            "line": 23,
+            "name": "verify user signed out",
+            "match": {
+              "location": "stepdefs.SignInStepDef.verify_user_signed_out()"
+            },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:09.879Z",
-        "line": 24,
+        "start_timestamp": "2020-06-23T15:17:57.236Z",
+        "line": 25,
         "name": "Change account preferences",
         "description": "",
         "id": "sign-in;change-account-preferences",
@@ -508,36 +537,45 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 1618884900,
+              "status": "passed"
             },
-            "line": 25,
+            "line": 26,
             "name": "the user is signed into their account",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.signedIntoAccount()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 933689800,
+              "status": "passed"
             },
-            "line": 26,
+            "line": 27,
             "name": "the user changes account settings to opt in to offers and newsletter",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.changesAccountSettingsAndOptsIn()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 42998700,
+              "status": "passed"
             },
-            "line": 27,
-            "name": "the \"updated account\" alert is displayed",
-            "match": {},
+            "line": 28,
+            "name": "the updated account alert is displayed",
+            "match": {
+              "location": "stepdefs.SignInStepDef.updatedAccountAlertIsDisplayed()"
+            },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:09.885Z",
-        "line": 29,
+        "start_timestamp": "2020-06-23T15:17:59.838Z",
+        "line": 30,
         "name": "Sign in Using invalid password",
         "description": "",
         "id": "sign-in;sign-in-using-invalid-password",
@@ -546,10 +584,10 @@
         "steps": [
           {
             "result": {
-              "duration": 929783800,
+              "duration": 573674000,
               "status": "passed"
             },
-            "line": 30,
+            "line": 31,
             "name": "the user is on the \"sign in\" page",
             "match": {
               "arguments": [
@@ -564,36 +602,45 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 461380900,
+              "status": "passed"
             },
-            "line": 31,
+            "line": 32,
             "name": "the user inputs valid email",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.InputsEmail()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 715011200,
+              "status": "passed"
             },
-            "line": 32,
+            "line": 33,
             "name": "enters invalid password",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.entersInvalidPassword()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 35067800,
+              "status": "passed"
             },
-            "line": 33,
-            "name": "the invalid \"password\" alert displayed",
-            "match": {},
+            "line": 34,
+            "name": "the invalid password alert displayed",
+            "match": {
+              "location": "stepdefs.SignInStepDef.invalidPasswordAlertDisplayed()"
+            },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:10.824Z",
-        "line": 35,
+        "start_timestamp": "2020-06-23T15:18:01.628Z",
+        "line": 36,
         "name": "Add new address to account",
         "description": "",
         "id": "sign-in;add-new-address-to-account",
@@ -602,45 +649,57 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 1199239500,
+              "status": "passed"
             },
-            "line": 36,
+            "line": 37,
             "name": "the user is on the account page",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.onAccountsPage()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 278991500,
+              "status": "passed"
             },
-            "line": 37,
+            "line": 38,
             "name": "on the address section",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.onAddressSection()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 1613189700,
+              "status": "passed"
             },
-            "line": 38,
+            "line": 39,
             "name": "the user adds a new address",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.userAddsNewAddress()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 47489100,
+              "status": "passed"
             },
-            "line": 39,
+            "line": 40,
             "name": "the new address is displayed",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.newAddressDisplayed()"
+            },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:10.833Z",
-        "line": 41,
+        "start_timestamp": "2020-06-23T15:18:04.803Z",
+        "line": 42,
         "name": "signed in with existing account details and have an existing order",
         "description": "",
         "id": "sign-in;signed-in-with-existing-account-details-and-have-an-existing-order",
@@ -649,27 +708,33 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.name: password (tried for 20 second(s) with 500 MILLISECONDS interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\r\n\tat pageObjects.BasePage.findAndType(BasePage.java:43)\r\n\tat pageObjects.SignInPage.enterPassword(SignInPage.java:195)\r\n\tat pageObjects.SignInPage.login(SignInPage.java:248)\r\n\tat stepdefs.SignInStepDef.signedIntoAccount(SignInStepDef.java:78)\r\n\tat ✽.the user is signed into their account(file:///C:/Users/amelia.nock/Documents/Ten10StoreFour/src/test/resources/features/signin.feature:43)\r\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.name: password\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027T10-ACA-1055\u0027, ip: \u0027192.168.1.96\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.5\u0027\nDriver info: driver.version: unknown\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\r\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\r\n\tat pageObjects.BasePage.findAndType(BasePage.java:43)\r\n\tat pageObjects.SignInPage.enterPassword(SignInPage.java:195)\r\n\tat pageObjects.SignInPage.login(SignInPage.java:248)\r\n\tat stepdefs.SignInStepDef.signedIntoAccount(SignInStepDef.java:78)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:27)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:49)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:51)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:67)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)\r\n",
+              "duration": 21118924700,
+              "status": "failed"
             },
-            "line": 42,
+            "line": 43,
             "name": "the user is signed into their account",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.signedIntoAccount()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
-            "line": 43,
+            "line": 44,
             "name": "the user navigates to a pre-existing order and adds a message",
-            "match": {},
+            "match": {
+              "location": "stepdefs.SignInStepDef.userNavigatesToOrderAndAddsMessage()"
+            },
             "keyword": "When "
           },
           {
             "result": {
               "status": "undefined"
             },
-            "line": 44,
+            "line": 45,
             "name": "the \"updated order\" alert is displayed",
             "match": {},
             "keyword": "Then "
@@ -677,8 +742,8 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-23T13:50:10.844Z",
-        "line": 46,
+        "start_timestamp": "2020-06-23T15:18:25.943Z",
+        "line": 47,
         "name": "Use and unregistered email to get forgotten password",
         "description": "",
         "id": "sign-in;use-and-unregistered-email-to-get-forgotten-password",
@@ -687,10 +752,10 @@
         "steps": [
           {
             "result": {
-              "duration": 840044800,
+              "duration": 503570700,
               "status": "passed"
             },
-            "line": 47,
+            "line": 48,
             "name": "the user is on the \"sign in\" page",
             "match": {
               "arguments": [
@@ -705,20 +770,26 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 626641600,
+              "status": "passed"
             },
-            "line": 48,
-            "name": "the user inputs and \"unregistered\" email in the forgotten password input",
-            "match": {},
+            "line": 49,
+            "name": "the user inputs and unregistered email in the forgotten password input",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userInputsForgottenPassword()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 26994100,
+              "status": "passed"
             },
-            "line": 49,
-            "name": "the unregistered \"email\" alert is displayed",
-            "match": {},
+            "line": 50,
+            "name": "the unregistered email alert is displayed",
+            "match": {
+              "location": "stepdefs.SignInStepDef.unregisteredEmailAlertIsDisplayed()"
+            },
             "keyword": "Then "
           }
         ]

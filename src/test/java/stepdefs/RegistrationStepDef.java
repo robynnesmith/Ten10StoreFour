@@ -36,11 +36,12 @@ public class RegistrationStepDef {
             default:
                 throw new IllegalArgumentException("Unrecognised page provided");
         }
-        signInPage.clickCreateAnAccount();
+
     }
 
     @When("^the user completes the registration form with an registered email address$")
     public void registrationFormWithRegisteredEmailAddress() {
+        signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetails();
         createNewAccountPage.clickSave();
     }
@@ -53,6 +54,7 @@ public class RegistrationStepDef {
 
     @When("the user completes the registration form with an unregistered email address")
     public void the_user_completes_the_registration_form_with_an_unregistered_email_address() {
+        signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetails();
     }
 
@@ -64,6 +66,7 @@ public class RegistrationStepDef {
     //Test 3 = Register using name with numeric value
     @When("the user completes the form with an unregistered email address")
     public void theUserCompletesTheRegistrationFormWithAnEmailAddress() {
+        signInPage.clickCreateAnAccount();
         double num1 = Math.random();
         createNewAccountPage.enterPersonalDetailsEmail(String.format(num1 + "@" + "test.com"));
         createNewAccountPage.enterPersonalDetailsPassword();
@@ -85,6 +88,7 @@ public class RegistrationStepDef {
     //Test 4 = Register using numeric password
     @When("the user completes the registration with an unregistered email address")
     public void theUserCompletesRegistrationFormWithAnEmailAddress() {
+        signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
         double num1 = Math.random();
         createNewAccountPage.enterPersonalDetailsEmail(String.format(num1 + "@test.com"));
@@ -106,6 +110,7 @@ public class RegistrationStepDef {
     //Test 5 = Register with invalid Birthdate
     @When("the user completes with an registered email address")
     public void theUserCompletesWithAnEmailAddress() {
+        signInPage.clickCreateAnAccount();
         createNewAccountPage.enterPersonalDetailsPDFirstNameAndLastName();
         createNewAccountPage.enterPersonalDetailsEmail("thegreatness@test.com");
         createNewAccountPage.enterPersonalDetailsPassword();

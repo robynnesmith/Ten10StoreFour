@@ -23,7 +23,6 @@ public class SignInPage extends BasePage {
     private static final By EMAIL_INPUT = By.name("email");
     private static final By PASSWORD_INPUT = By.name("password");
     private static final By SIGN_IN_BUTTON = By.cssSelector("#login-form button[type='submit']");
-   // #login-form button[type='submit']
     private static final By SIGN_OUT_BUTTON = By.cssSelector(".logout.hidden-sm-down");
     private static final By UNREGISTERED_USER_ALERT = By.cssSelector(".alert.alert-danger");
     private static final By FORGOTTEN_PASSWORD_LINK = By.cssSelector(".forgot-password");
