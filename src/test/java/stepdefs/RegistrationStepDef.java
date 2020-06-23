@@ -27,6 +27,7 @@ public class RegistrationStepDef {
 
     @Given("^the user is on the \"([^\"]*)\" page$")
     public void theUserIdOnThePage(String page) {
+        homepage.clearCookies();
         homepage.goTo();
         switch (page) {
             case "sign in":
