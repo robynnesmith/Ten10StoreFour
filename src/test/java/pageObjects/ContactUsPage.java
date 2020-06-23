@@ -7,10 +7,6 @@ import org.openqa.selenium.WebElement;
 
 public class ContactUsPage extends BasePage {
 
-    public ContactUsPage(WebDriver driver) {
-        super(driver);
-    }
-
     private static final By EMAIL_BOX = By.cssSelector("#content div:nth-child(3) > div > input");
     private static final By MESSAGE_BOX = By.cssSelector("#content div:nth-child(5) > div > textarea");
     private static final By SEND_BUTTON = By.cssSelector("#content > section > form > footer > input");

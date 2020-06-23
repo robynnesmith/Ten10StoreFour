@@ -5,6 +5,8 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import config.DriverFactory;
+
 /**
  * Created by jack.forman on 22/10/2016.
  */

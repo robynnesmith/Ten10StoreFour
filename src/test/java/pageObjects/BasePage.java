@@ -1,5 +1,6 @@
 package pageObjects;
 
+import config.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
@@ -19,8 +20,8 @@ abstract class BasePage {
     private PersonalDetails pd = new PersonalDetails("Robin", "Hood", "test@sherwood.com", "ghsjdc@test.com", "LadyM", "Sherwood Forest", "Nottingham", "Minnesota", "12345", "6320864892", "Forest");
 
 
-    BasePage(WebDriver driver) {
-        this.driver = driver;
+    BasePage() {
+        driver = DriverFactory.getDriver();
         this.wait = new WebDriverWait(driver, 20);
     }
 
@@ -53,5 +54,13 @@ abstract class BasePage {
 
     public PersonalDetails getPersonalDetails() {
         return pd;
+    }
+
+    public void clearCookies(){
+        driver.manage().deleteAllCookies();
+    }
+
+    public void refreshPage(){
+        driver.navigate().refresh();
     }
 }

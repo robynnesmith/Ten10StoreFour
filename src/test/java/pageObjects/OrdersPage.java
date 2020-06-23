@@ -9,10 +9,6 @@ import org.openqa.selenium.support.ui.Select;
 public class OrdersPage extends BasePage {
 
 
-    public OrdersPage(WebDriver driver) {
-        super(driver);
-    }
-
     private static final By ORDERS_LINK = By.cssSelector("#footer_account_list > li:nth-child(3) > a");
     private static final By DETAILS_LINK = By.cssSelector("#content tr:nth-child(1) a:nth-child(1)");
     private static final By PRODUCT_DROPDOWN = By.cssSelector("#content select");
