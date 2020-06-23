@@ -1,0 +1,314 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-23T10:47:59.314Z",
+        "line": 3,
+        "name": "Register user with already registered email address",
+        "description": "",
+        "id": "registration;register-user-with-already-registered-email-address",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8506155800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserIdOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 957143700,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user completes the registration form with an registered email address",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.registrationFormWithRegisteredEmailAddress()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 59996900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the already registered alert is displayed",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.registeredAlertDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-23T10:48:08.973Z",
+        "line": 8,
+        "name": "Register as new user",
+        "description": "",
+        "id": "registration;register-as-new-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 911354500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserIdOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 661164900,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user completes the registration form with an unregistered email address",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.the_user_completes_the_registration_form_with_an_unregistered_email_address()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 308424500,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user is registered and the account page is displayed",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.userRegisteredAndAccountDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-23T10:48:10.862Z",
+        "line": 14,
+        "name": "Register using name with numeric value",
+        "description": "",
+        "id": "registration;register-using-name-with-numeric-value",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 867298000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserIdOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 708516300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the user completes the registration form with an unregistered email address",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.the_user_completes_the_registration_form_with_an_unregistered_email_address()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 559002500,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "enters a name with numeric values",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.entersANameWithNumericValues()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 56997800,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the invalid name alert is displayed",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.theInvalidAlertIsDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-23T10:48:13.066Z",
+        "line": 20,
+        "name": "Register using numeric values for password",
+        "description": "",
+        "id": "registration;register-using-numeric-values-for-password",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 831982900,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserIdOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 656088700,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "the user completes the registration form with an unregistered email address",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.the_user_completes_the_registration_form_with_an_unregistered_email_address()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 390865500,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "enters numeric values into the Password field",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.entersNumericValuesIntoThePasswordField()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 41996500,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "invalid password alert is displayed",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.invalidAlertIsDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-23T10:48:15.007Z",
+        "line": 26,
+        "name": "Register with invalid birthdate",
+        "description": "",
+        "id": "registration;register-with-invalid-birthdate",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 808334700,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserIdOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 925800800,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "the user completes the registration form with an registered email address",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.registrationFormWithRegisteredEmailAddress()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 296739700,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "enters an invalid birthdate",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.entersAnInvalidBirthdate()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 42054000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "the invalid birthdate alert is displayed",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.theInvalidBirthDateAlertIsDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Registration",
+    "description": "",
+    "id": "registration",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/registration.feature",
+    "tags": []
+  }
+]
