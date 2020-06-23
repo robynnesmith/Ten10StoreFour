@@ -1,9 +1,8 @@
 package stepdefs;
 
+import Tests.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import pageObjects.*;
-
-import static Tests.TestSuite.driverFactory;
 
 public class ShoppingCartStepDef {
 

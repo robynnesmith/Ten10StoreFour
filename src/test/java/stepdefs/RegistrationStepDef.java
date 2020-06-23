@@ -1,6 +1,6 @@
 package stepdefs;
 
-import io.cucumber.java.en.Given;
+import Tests.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
@@ -15,11 +15,6 @@ public class RegistrationStepDef {
     private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
     private SignInPage signInPage = new SignInPage(driver);
     private CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage(driver);
-
-    @Given("^the user is on the \"([^\"]*)\" page$")
-    public void theUserIdOnThePage(String page) {
-
-    }
 
 
 }

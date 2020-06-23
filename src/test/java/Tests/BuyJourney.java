@@ -1,7 +1,6 @@
 package Tests;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.*;

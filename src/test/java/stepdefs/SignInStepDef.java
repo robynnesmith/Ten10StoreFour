@@ -1,10 +1,9 @@
 package stepdefs;
 
+import Tests.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
-
-import static Tests.TestSuite.driverFactory;
 
 public class SignInStepDef {
 
