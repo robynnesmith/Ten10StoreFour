@@ -15,7 +15,7 @@ Feature: BuyJourney
     Given user is on the "product" page
     When the user specifies exact purchase
     And clicks add to cart
-    Then verify product has been added to cart
+    Then product has been added to cart
 
   Scenario: Add Message to Previous Order
     Given user is on the "home" page
