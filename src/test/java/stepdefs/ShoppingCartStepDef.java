@@ -12,4 +12,5 @@ public class ShoppingCartStepDef {
     private ProductPage productPage = new ProductPage();
     private CheckoutPage checkoutPage = new CheckoutPage();
 
+
 }
