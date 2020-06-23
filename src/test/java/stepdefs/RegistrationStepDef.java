@@ -21,6 +21,7 @@ public class RegistrationStepDef {
 //Test 1 = Register with registered email address
     @Given("^the user is on the \"([^\"]*)\" page$")
     public void theUserIdOnThePage(String page) {
+        homepage.goTo();
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
     }
@@ -38,6 +39,7 @@ public class RegistrationStepDef {
 //Test 2 = Register New User
     @Given("^the user is on the \"([^\"]*)\" page$")
     public void theUserIsOnThePage(String page) {
+        homepage.goTo();
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
     }
@@ -53,11 +55,12 @@ public class RegistrationStepDef {
 //Test 3 = Register using name with numeric value
     @Given("^the user is on the \"([^\"]*)\" page$")
     public void theUserIsOnThisPage(String page) {
+        homepage.goTo();
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
     }
         @When("^the user completes the registration form with an \"unregistered\" email address And enters a name with numeric values$")
-        public void entersNameWithNumericValues() {
+        public void entersNameWithNumericValues(String page ) {
             createNewAccountPage.enterPersonalDetailsNumbersFirstName("12345");
             createNewAccountPage.enterPersonalDetailsNumberLastName("Nock");
             double num1 = Math.random();
@@ -72,7 +75,8 @@ public class RegistrationStepDef {
 
     //Test 4 = Register using numeric password
     @Given("^the user is on the \"([^\"]*)\" page$")
-        public void userIsOnThisPage(){
+        public void userIsOnThisPage(String page){
+        homepage.goTo();
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
     }
@@ -92,7 +96,8 @@ public class RegistrationStepDef {
 
     //Test 5 = Register with invalid Birthdate
     @Given("^the user is on the \"([^\"]*)\" page$")
-        public void userIsOnThePage(){
+        public void userIsOnThePage(String page){
+        homepage.goTo();
         homepage.navigateToSignInPage();
         signInPage.clickCreateAnAccount();
     }
