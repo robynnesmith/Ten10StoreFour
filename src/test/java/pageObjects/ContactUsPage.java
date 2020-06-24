@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class ContactUsPage extends BasePage {
 
     private static final By EMAIL_BOX = By.cssSelector("#content div:nth-child(3) > div > input");
-    private static final By MESSAGE_BOX = By.cssSelector("#content div:nth-child(5) > div > textarea");
+    private static final By MESSAGE_BOX = By.cssSelector("#content div:nth-child(6) > div > textarea");
     private static final By SEND_BUTTON = By.cssSelector("#content > section > form > footer > input");
     private static final By RESPONSE_BOX = By.cssSelector("#content > section > form > div > ul > li");
 

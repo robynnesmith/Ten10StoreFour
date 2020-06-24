@@ -1,6 +1,7 @@
 package stepdefs;
 
 
+
 import config.DriverFactory;
 
 
@@ -8,6 +9,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import org.openqa.selenium.WebDriver;
 import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
@@ -126,6 +128,7 @@ public class RegistrationStepDef {
     public void theInvalidBirthDateAlertIsDisplayed() {
         createNewAccountPage.assertNumericErrorDisplay();
     }
+
 }
 
 

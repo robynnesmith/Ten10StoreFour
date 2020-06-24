@@ -1,6 +1,10 @@
 package Tests;
 
-import org.junit.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
@@ -8,7 +12,6 @@ import pageObjects.ShoppingCartPage;
 import pageObjects.SignInPage;
 
 import static Tests.TestSuite.driverFactory;
-
 
 /**
  * Created by jack.forman on 09/10/2016.
