@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/registration.feature");
 formatter.feature({
   "name": "Registration",
@@ -552,3 +553,5 @@ formatter.result({
   "status": "passed"
 });
 });
+=======
+>>>>>>> b84e2811206aac811acf7dd31a364b15cc18f2be
