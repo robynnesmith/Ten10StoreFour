@@ -507,12 +507,14 @@ formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "the \"updated order\" alert is displayed",
+  "name": "the updated order alert is displayed",
   "keyword": "Then "
 });
-formatter.match({});
+formatter.match({
+  "location": "stepdefs.SignInStepDef.updatedOrderAlertIsDisplayed()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
 });
 formatter.scenario({
   "name": "Use and unregistered email to get forgotten password",

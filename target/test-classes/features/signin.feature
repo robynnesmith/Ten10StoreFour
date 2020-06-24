@@ -42,7 +42,7 @@ Feature: Sign in
                 Scenario: signed in with existing account details and have an existing order
                   Given the user is signed into their account
                   When the user navigates to a pre-existing order and adds a message
-                  Then the "updated order" alert is displayed
+                  Then the updated order alert is displayed
 
                   Scenario: Use and unregistered email to get forgotten password
                     Given the user is on the "sign in" page
