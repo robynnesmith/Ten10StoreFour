@@ -9,115 +9,153 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pageObjects.HomePage;
-import pageObjects.PersonalDetails;
-import pageObjects.SignInPage;
+import pageObjects.*;
 
 
 public class SignInStepDef {
 
     private HomePage homepage = new HomePage();
     private SignInPage signInPage = new SignInPage();
+    private CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage();
+    private ProductPage productPage = new ProductPage();
+    private WomenPage womenPage = new WomenPage();
+    private ContactUsPage contactuspage = new ContactUsPage();
     private PersonalDetails pd = new PersonalDetails("Robin", "Hood", "test@sherwood.com", "ghsjdc@test.com", "LadyM", "Sherwood Forest", "Nottingham", "Minnesota", "12345", "6320864892", "Forest");
-    //private PersonalDetails pd = getPersonalDetails();
 
-    //private PersonalDetails getPersonalDetails() {
-      //  return pd;
-    //}
-
-
-
-    //Test 1 Sign in as registered user
-    @When("^the user signs in with email and password$")
-    public void userSignsinWithEmailAndPassword (){
-        signInPage.enterSignInEmailAddress(pd.getEmail());
-        signInPage.enterPassword();
-        signInPage.clickLogIn();
+    @When("^the user signs in with \"([^\"]*)\" email")
+    public void userSignsinWithEmailAndPassword (String register){
+        switch(register) {
+            case "registered":
+                signInPage.enterSignInEmailAddress(pd.getEmail());
+                signInPage.enterPassword();
+                signInPage.clickLogIn();
+                break;
+            case "unregistered":
+                signInPage.invalidLogin();
+                break;
+            case "BuyJourney":
+                signInPage.loginBuyJourneyTest();
+                break;
+            default:
+                throw new IllegalArgumentException("Unrecognised state of email");
+        }
     }
 
-    @Then("^the user is signed in$")
-   public void userIsSignedIn(){
-        signInPage.successfulSignIn();
-}
-//Test 2 = Sign in as unregistered user
-    @When("^the user fills in sign in details with unregistered email$")
-    public void signsInWithUnregisteredEmail(){
-        signInPage.invalidLogin();
+    @Then("^the user is signed \"([^\"]*)\"$")
+    public void userIsSignedIn(String status){
+        switch(status) {
+            case "in":
+                signInPage.successfulSignIn();
+                break;
+            case "out":
+                signInPage.userSignedOut();
+                break;
+            default:
+                throw new IllegalArgumentException("Unrecognised sign in status");
+        }
     }
-    @Then("^error message is displayed$")
-    public void errorMessageIsDisplayed(){
-        signInPage.unregisteredUserAlert();
+
+    @Then("^\"([^\"]*)\" is displayed$")
+    public void errorMessageIsDisplayed(String object){
+        switch(object) {
+            case "error message":
+                signInPage.unregisteredUserAlert();
+                break;
+            case "confirmation message":
+                signInPage.confirmationMessage();
+                break;
+            case "updated account alert":
+                signInPage.assertSubscribeSuccess();
+                break;
+            case "invalid password alert":
+                signInPage.alreadyRegisteredAlertPresent();
+                break;
+            case "new address":
+                signInPage.verifyAddressSave();
+                break;
+            case "updated order alert":
+                break;
+            case "unregistered email alert":
+                signInPage.verifyAlertSuccess();
+                break;
+            case "already registered alert":
+                signInPage.alreadyRegisteredAlertPresent();
+                break;
+            case "invalid name alert":
+                createNewAccountPage.assertNumericErrorDisplay();
+                break;
+            case "invalid numeric password alert":
+                createNewAccountPage.assertLogin();
+                break;
+            case "invalid birthdate alert":
+                createNewAccountPage.assertNumericErrorDisplay();
+                break;
+            case "product page":
+                productPage.productPageDisplayed();
+                break;
+            case "correct product":
+                womenPage.verifyCorrectProductDisplayed();
+                break;
+            case "all products":
+                womenPage.verifyAllProducts();
+                break;
+            case "success message":
+                homepage.verifySubscribe();
+                break;
+            case "contact confirmation message":
+                contactuspage.verifyMessageSent();
+                break;
+            case "product available with different options message":
+                productPage.verifyOtherOptionsAvailable();
+                break;
+            case "out of stock message":
+                productPage.verifyOutOfStock();
+                break;
+            default:
+                throw new IllegalArgumentException("Unrecognised object");
+        }
     }
-    //Test 3 = Forgotten Password
+
     @When("^the user clicks forgotten password$")
     public void userClicksForgottenPassword(){
         signInPage.forgottenPassword();
         signInPage.enterForgottenPasswordEmailAddress(pd.getEmail());
         signInPage.clickRetrievePassword();
     }
-    @Then("Confirmation message is displayed")
-public void confirmation_message_is_displayed() {
-    signInPage.confirmationMessage();
-    }
 
-    //Test 4 = Sign out
     @When("^the user signs out$")
     public void userSignsOut(){
         signInPage.login();
         signInPage.clickSignOut();
     }
-    @Then("^verify user signed out$")
-    public void verify_user_signed_out() {
-        signInPage.userSignedOut();
-    }
 
-    //Test 5 = Change account preferences
-    @Given("^the user is signed into their account$")
-    public void signedIntoAccount(){
-        homepage.goTo();
-        homepage.navigateToSignInPage();
-        signInPage.login();
-    }
-
-@When("^the user changes account settings to opt in to offers and newsletter$")
+    @When("^the user changes account settings to opt in to offers and newsletter$")
     public void changesAccountSettingsAndOptsIn(){
-    double num1 = Math.random();
-    signInPage.pressIdentityButton();
-    signInPage.enterPassword();
-    signInPage.enterEmailSubscribe(String.format(num1 + "@"  + "test.com"));
-    signInPage.pressSubscribe();
-}
-@Then("^the updated account alert is displayed$")
-    public void updatedAccountAlertIsDisplayed(){
-    signInPage.assertSubscribeSuccess();
-}
+        double num1 = Math.random();
+        signInPage.pressIdentityButton();
+        signInPage.enterPassword();
+        signInPage.enterEmailSubscribe(String.format(num1 + "@"  + "test.com"));
+        signInPage.pressSubscribe();
+    }
 
-//Test 6 = Sign in Using invalid password
     @When("^the user inputs valid email$")
     public void InputsEmail(){
         homepage.navigateToSignInPage();
         signInPage.enterSignInEmailAddress("test@sherwood.com");
     }
-@And("^enters invalid password$")
+
+    @And("^enters invalid password$")
     public void entersInvalidPassword(){
-    double num1 = Math.random();
-    signInPage.enterInvalidPassword(String.format(num1 + "password"));
-    signInPage.clickLogIn();
-}
-@Then("^the invalid password alert displayed$")
-    public void invalidPasswordAlertDisplayed(){
-    signInPage.alreadyRegisteredAlertPresent();
-}
-//Test 7 = Add new address to account
-    @Given("^the user is on the account page$")
-    public void onAccountsPage(){
-        homepage.navigateToSignInPage();
-        signInPage.login();
+        double num1 = Math.random();
+        signInPage.enterInvalidPassword(String.format(num1 + "password"));
+        signInPage.clickLogIn();
     }
+
     @And("^on the address section$")
     public void onAddressSection(){
         signInPage.pressAddressesButton();
     }
+
     @When("^the user adds a new address$")
     public void userAddsNewAddress(){
         signInPage.createNewAddress();
@@ -127,11 +165,7 @@ public void confirmation_message_is_displayed() {
         signInPage.detailsForNewAddress();
         signInPage.pressSave();
     }
-    @Then("^the new address is displayed$")
-    public void newAddressDisplayed(){
-        signInPage.verifyAddressSave();
-    }
-    //Test 8 = signed in with existing account details and have an existing order
+
     @When("^the user navigates to a pre-existing order and adds a message$")
     public void userNavigatesToOrderAndAddsMessage(){
         signInPage.orderHistoryButton();
@@ -139,21 +173,12 @@ public void confirmation_message_is_displayed() {
         signInPage.pressContinueButton();
         signInPage.deliveryMessage("Please leave in shed");
     }
-    @Then("^the updated order alert is displayed$")
-    public void updatedOrderAlertIsDisplayed(){
 
-
-    }
-    //Test 9 = Use and unregistered email to get forgotten password
     @When("^the user inputs and unregistered email in the forgotten password input$")
     public void userInputsForgottenPassword(){
         signInPage.forgottenPassword();
         signInPage.enterSignInEmailAddress("hello@test.com");
         signInPage.clickRetrievePassword();
-    }
-    @Then("^the unregistered email alert is displayed$")
-    public void unregisteredEmailAlertIsDisplayed(){
-        signInPage.verifyAlertSuccess();
     }
 }
 
