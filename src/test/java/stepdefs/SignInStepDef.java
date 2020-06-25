@@ -23,7 +23,7 @@ public class SignInStepDef {
     private PersonalDetails pd = new PersonalDetails("Robin", "Hood", "test@sherwood.com", "ghsjdc@test.com", "LadyM", "Sherwood Forest", "Nottingham", "Minnesota", "12345", "6320864892", "Forest");
 
     @When("^the user signs in with \"([^\"]*)\" email")
-    public void userSignsinWithEmailAndPassword (String register){
+    public void userSignsIn(String register){
         switch(register) {
             case "registered":
                 signInPage.enterSignInEmailAddress(pd.getEmail());
@@ -56,7 +56,7 @@ public class SignInStepDef {
     }
 
     @Then("^\"([^\"]*)\" is displayed$")
-    public void errorMessageIsDisplayed(String object){
+    public void isDisplayed(String object){
         switch(object) {
             case "error message":
                 signInPage.unregisteredUserAlert();
@@ -180,5 +180,6 @@ public class SignInStepDef {
         signInPage.enterSignInEmailAddress("hello@test.com");
         signInPage.clickRetrievePassword();
     }
+
 }
 

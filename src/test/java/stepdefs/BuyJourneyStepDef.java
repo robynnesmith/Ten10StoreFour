@@ -26,7 +26,7 @@ public class BuyJourneyStepDef {
     }
 
     @And ("^user clicks \"([^\"]*)\"$")
-    public void clickMore(String item) {
+    public void click(String item) {
         switch (item) {
             case "more":
                 homepage.clickMoreButton();

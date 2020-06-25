@@ -23,7 +23,7 @@ public class RegistrationStepDef {
     private ProductPage productPage = new ProductPage();
 
     @Given("^the user is on the \"([^\"]*)\" page$")
-    public void theUserIdOnThePage(String page) {
+    public void theUserOnThePage(String page) {
         homepage.clearCookies();
         homepage.goTo();
         switch (page) {
@@ -54,7 +54,7 @@ public class RegistrationStepDef {
     }
 
     @When("^the user completes the registration form with \"([^\"]*)\"$")
-    public void registrationFormWithRegisteredEmailAddress(String combo) {
+    public void registrationForm(String combo) {
         switch (combo) {
             case "a registered email address":
                 signInPage.clickCreateAnAccount();
@@ -99,7 +99,6 @@ public class RegistrationStepDef {
     public void userRegisteredAndAccountDisplayed() {
         createNewAccountPage.clickSave();
     }
-
 
 }
 
