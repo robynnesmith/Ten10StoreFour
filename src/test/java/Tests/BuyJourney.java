@@ -1,7 +1,6 @@
 package Tests;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.*;
@@ -13,20 +12,19 @@ import static Tests.TestSuite.driverFactory;
  */
 public class BuyJourney {
 
-    public static WebDriver driver = driverFactory.getDriver();
-    private HomePage homepage = new HomePage(driver);
-    private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
-    private SignInPage signInPage = new SignInPage(driver);
-    private ProductPage productPage = new ProductPage(driver);
-    private WomenPage womenPage = new WomenPage(driver);
-    private OrdersPage orderspage = new OrdersPage(driver);
-    private ContactUsPage contactuspage = new ContactUsPage(driver);
-    private CheckoutPage checkoutPage = new CheckoutPage(driver);
+    private HomePage homepage = new HomePage();
+    private ShoppingCartPage basketpage = new ShoppingCartPage();
+    private SignInPage signInPage = new SignInPage();
+    private ProductPage productPage = new ProductPage();
+    private WomenPage womenPage = new WomenPage();
+    private OrdersPage orderspage = new OrdersPage();
+    private ContactUsPage contactuspage = new ContactUsPage();
+    private CheckoutPage checkoutPage = new CheckoutPage();
 
 
     @Before
     public void individualSetUp() {
-        driver.manage().deleteAllCookies();
+        homepage.clearCookies();
         homepage.goTo();
         homepage.maximiseBrowserWindow();
     }
@@ -123,7 +121,7 @@ public class BuyJourney {
         womenPage.clickColour();
         womenPage.clickPrice();
         womenPage.clearAll();
-        driver.navigate().refresh();
+        womenPage.refreshPage();
         womenPage.verifyAllProducts();
     }
 

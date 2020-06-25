@@ -11,10 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  */
 public class CreateNewAccountPage extends BasePage {
 
-    public CreateNewAccountPage(WebDriver driver) {
-        super(driver);
-    }
-
     private static final By FIRST_NAME_INPUT = By.name("firstname");
     private static final By LAST_NAME_INPUT= By.name("lastname");
     private static final By EMAIL_INPUT = By.name("email");
