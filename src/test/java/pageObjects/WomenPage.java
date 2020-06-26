@@ -7,9 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class WomenPage extends BasePage {
-    public WomenPage(WebDriver driver) {
-        super(driver);
-    }
 
     private static final By PRICE_BOX = By.cssSelector("a[href='http://3.11.70.191/index.php?controller=category&id_category=8&q=Size-M/Color-Orange/Price-%24-28-30']");
     private static final By MEDIUM_BOX = By.cssSelector("a[href='http://3.11.70.191/index.php?controller=category&id_category=8&q=Size-M']");
