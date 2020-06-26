@@ -1,0 +1,2818 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-26T09:52:31.324Z",
+        "line": 3,
+        "name": "Select Item from homepage",
+        "description": "",
+        "id": "buyjourney;select-item-from-homepage",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6829759200,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 296003000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user goes to a product",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.selectItemFromHomepage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 368490400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user clicks \"more\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "more",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 60989900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "\"product page\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "product page",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:52:38.949Z",
+        "line": 9,
+        "name": "Add Item to Cart on homepage",
+        "description": "",
+        "id": "buyjourney;add-item-to-cart-on-homepage",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 222524600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1143969800,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user clicks \"add to cart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "add to cart",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 617767100,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "product has been added to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.verifyItemInCart()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:52:40.940Z",
+        "line": 14,
+        "name": "Add Item to Cart on productpage",
+        "description": "",
+        "id": "buyjourney;add-item-to-cart-on-productpage",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 536078800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the user is on the \"product\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "product",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 425647400,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the user specifies exact purchase",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.selectItem()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 74497000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user clicks \"add to cart on product page\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "add to cart on product page",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: #myModalLabel (tried for 20 second(s) with 500 MILLISECONDS interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\r\n\tat pageObjects.BasePage.waitUntilVisible(BasePage.java:48)\r\n\tat pageObjects.HomePage.addedToCart(HomePage.java:93)\r\n\tat stepdefs.BuyJourneyStepDef.verifyItemInCart(BuyJourneyStepDef.java:61)\r\n\tat ✽.product has been added to cart(file:///C:/Users/darren.carverbalsige/Documents/AutomationTraining/Ten10StoreFour/src/test/resources/features/buyjourney.feature:18)\r\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: #myModalLabel\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027T10-ACA-0943\u0027, ip: \u0027192.168.1.71\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.4\u0027\nDriver info: driver.version: unknown\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\r\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\r\n\tat pageObjects.BasePage.waitUntilVisible(BasePage.java:48)\r\n\tat pageObjects.HomePage.addedToCart(HomePage.java:93)\r\n\tat stepdefs.BuyJourneyStepDef.verifyItemInCart(BuyJourneyStepDef.java:61)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:27)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:49)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:51)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:67)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)\r\n\tat com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)\r\n",
+              "duration": 20244704800,
+              "status": "failed"
+            },
+            "line": 18,
+            "name": "product has been added to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.verifyItemInCart()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:02.237Z",
+        "line": 20,
+        "name": "Add Message to Previous Order",
+        "description": "",
+        "id": "buyjourney;add-message-to-previous-order",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 668576200,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 826252300,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "the user signs in with \"BuyJourney\" email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BuyJourney",
+                  "offset": 24
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userSignsIn(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3553875300,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "user fills out \"message form on details page\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "message form on details page",
+                  "offset": 16
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.fillOutMessage(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 72004600,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "message is sent off",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.verifyMessageSent()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:07.367Z",
+        "line": 26,
+        "name": "Filters Display Correct Products",
+        "description": "",
+        "id": "buyjourney;filters-display-correct-products",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 774152100,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "the user is on the \"dresses\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "dresses",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1384021300,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "user clicks \"filters\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "filters",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 29846900,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "\"correct product\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "correct product",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:09.567Z",
+        "line": 31,
+        "name": "Clear Filters Restores Products",
+        "description": "",
+        "id": "buyjourney;clear-filters-restores-products",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 670162700,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "the user is on the \"dresses\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "dresses",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1415404900,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "user clicks \"filters\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "filters",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 535594400,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "user clicks \"clear filters\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "clear filters",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 51994000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "\"all products\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "all products",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:12.247Z",
+        "line": 37,
+        "name": "Subscribe to Newsletter",
+        "description": "",
+        "id": "buyjourney;subscribe-to-newsletter",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 237861800,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 532659500,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "user fills out \"newsletter form\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "newsletter form",
+                  "offset": 16
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.fillOutMessage(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 56996500,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "\"success message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "success message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:13.083Z",
+        "line": 42,
+        "name": "Send Message Through Contact Us Page",
+        "description": "",
+        "id": "buyjourney;send-message-through-contact-us-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 470861000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 835643900,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "the user signs in with \"BuyJourney\" email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BuyJourney",
+                  "offset": 24
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userSignsIn(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1113235900,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "user fills out \"contact us form\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "contact us form",
+                  "offset": 16
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.fillOutMessage(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 44240400,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "\"contact confirmation message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "contact confirmation message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:15.552Z",
+        "line": 48,
+        "name": "Buy Summer Dress via Menu",
+        "description": "",
+        "id": "buyjourney;buy-summer-dress-via-menu",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 742672700,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "the user is on the \"summer dresses\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "summer dresses",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 934177200,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "the user adds product to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.addProductToCart()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 599295400,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "product has been added to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.verifyItemInCart()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:17.838Z",
+        "line": 53,
+        "name": "Add Item via Search",
+        "description": "",
+        "id": "buyjourney;add-item-via-search",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 373873600,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 503696200,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "the user searches for product",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.searchProduct()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 978289800,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "the user adds product to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.addProductToCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 596154100,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "product has been added to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.verifyItemInCart()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:20.294Z",
+        "line": 59,
+        "name": "Buy Second Item",
+        "description": "",
+        "id": "buyjourney;buy-second-item",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 333514100,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 967203400,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "the user adds product to cart",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.addProductToCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2579440300,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "the user continues and buys another item",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.buySecondItem()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 40999900,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "cart page has both items",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.checkCartPage()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:24.219Z",
+        "line": 65,
+        "name": "Order Large Quantity of Item",
+        "description": "",
+        "id": "buyjourney;order-large-quantity-of-item",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 289421700,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1270726700,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "user attempts to buy large quantity of product",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.buyLotOfProduct()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d83.0.4103.116)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027T10-ACA-0943\u0027, ip: \u0027192.168.1.71\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.4\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}), userDataDir\u003dC:\\Users\\DARREN~1.CAR\\AppData\\Local\\Temp\\scoped_dir22552_919776645}, timeouts\u003d{implicit\u003d0, pageLoad\u003d300000, script\u003d30000}, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003ddismiss and notify, strictFileInteractability\u003dfalse, platform\u003dWINDOWS, proxy\u003dProxy(), goog:chromeOptions\u003d{debuggerAddress\u003dlocalhost:62231}, acceptInsecureCerts\u003dfalse, browserVersion\u003d83.0.4103.116, browserName\u003dchrome, javascriptEnabled\u003dtrue, platformName\u003dWINDOWS, setWindowRect\u003dtrue, webauthn:virtualAuthenticators\u003dtrue}]\nSession ID: da7750c686099b707cd2be62e4d84f99\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:160)\r\n\tat pageObjects.ProductPage.verifyOutOfStock(ProductPage.java:62)\r\n\tat stepdefs.SignInStepDef.isDisplayed(SignInStepDef.java:113)\r\n\tat ✽.\"out of stock message\" is displayed(file:///C:/Users/darren.carverbalsige/Documents/AutomationTraining/Ten10StoreFour/src/test/resources/features/buyjourney.feature:68)\r\n",
+              "duration": 53540400,
+              "status": "failed"
+            },
+            "line": 68,
+            "name": "\"out of stock message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "out of stock message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 999400,
+              "status": "skipped"
+            },
+            "line": 69,
+            "name": "add to cart button is disabled",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.cartButtonDisabled()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:25.845Z",
+        "line": 71,
+        "name": "Product Available in Different Options",
+        "description": "",
+        "id": "buyjourney;product-available-in-different-options",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 340620700,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 337085500,
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "user selects product with different options",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.selectProduct()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 105962000,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "\"product available with different options message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "product available with different options message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:26.631Z",
+        "line": 76,
+        "name": "Reorder Product",
+        "description": "",
+        "id": "buyjourney;reorder-product",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 453812400,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 772696900,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "the user signs in with \"BuyJourney\" email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BuyJourney",
+                  "offset": 24
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userSignsIn(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2842398800,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "user reorders item",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.reorderItem()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2001101000,
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "user completes purchase",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.completePurchase()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48918700,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "purchase is successful",
+            "match": {
+              "location": "stepdefs.BuyJourneyStepDef.purchaseSuccessful()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "BuyJourney",
+    "description": "",
+    "id": "buyjourney",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/buyjourney.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-26T09:53:32.754Z",
+        "line": 4,
+        "name": "Register user with already registered email address",
+        "description": "",
+        "id": "registration;register-user-with-already-registered-email-address",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 512350600,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1203526900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user completes the registration form with \"a registered email address\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "a registered email address",
+                  "offset": 47
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.registrationForm(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 44997300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "\"already registered alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "already registered alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:34.519Z",
+        "line": 9,
+        "name": "Register as new user",
+        "description": "",
+        "id": "registration;register-as-new-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 558152400,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 715725600,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user completes the registration form with \"an unregistered email address\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "an unregistered email address",
+                  "offset": 47
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.registrationForm(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 294005600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the user is registered and the account page is displayed",
+            "match": {
+              "location": "stepdefs.RegistrationStepDef.userRegisteredAndAccountDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:36.092Z",
+        "line": 14,
+        "name": "Register using name with numeric value",
+        "description": "",
+        "id": "registration;register-using-name-with-numeric-value",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 528167900,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1119478900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the user completes the registration form with \"an unregistered email address and a name with numeric values\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "an unregistered email address and a name with numeric values",
+                  "offset": 47
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.registrationForm(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 65544700,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "\"invalid name alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "invalid name alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:37.810Z",
+        "line": 19,
+        "name": "Register using numeric values for password",
+        "description": "",
+        "id": "registration;register-using-numeric-values-for-password",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 529677700,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1329343900,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user completes the registration form with \"an unregistered email address and a password with numeric values\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "an unregistered email address and a password with numeric values",
+                  "offset": 47
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.registrationForm(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 50994900,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "\"invalid numeric password alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "invalid numeric password alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:39.722Z",
+        "line": 24,
+        "name": "Register with invalid birthdate",
+        "description": "",
+        "id": "registration;register-with-invalid-birthdate",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 517764700,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1264601700,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "the user completes the registration form with \"a registered email address and an invalid birthdate\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "a registered email address and an invalid birthdate",
+                  "offset": 47
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.registrationForm(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 51998200,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "\"invalid birthdate alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "invalid birthdate alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Registration",
+    "description": "",
+    "id": "registration",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/registration.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-26T09:53:41.559Z",
+        "line": 3,
+        "name": "user removes item from their basket",
+        "description": "",
+        "id": "shoppingcart;user-removes-item-from-their-basket",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 231996200,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1601329900,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 926668800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 105159800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the user \"deletes\" an item in the basket",
+            "match": {
+              "arguments": [
+                {
+                  "val": "deletes",
+                  "offset": 10
+                }
+              ],
+              "location": "stepdefs.ShoppingCartStepDef.userDeletesItem(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 604897600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the item is deleted from the basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemDeleted()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:45.036Z",
+        "line": 10,
+        "name": "user increases quantity of product in basket",
+        "description": "",
+        "id": "shoppingcart;user-increases-quantity-of-product-in-basket",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 202031600,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1578089600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 944242300,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 134209400,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the user \"increases the quantity of\" an item in the basket",
+            "match": {
+              "arguments": [
+                {
+                  "val": "increases the quantity of",
+                  "offset": 10
+                }
+              ],
+              "location": "stepdefs.ShoppingCartStepDef.userDeletesItem(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 336997400,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the quantity is increased",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.quantityIsIncreased()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:48.235Z",
+        "line": 17,
+        "name": "user proceeds to checkout not logged in",
+        "description": "",
+        "id": "shoppingcart;user-proceeds-to-checkout-not-logged-in",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 214583200,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1668986400,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1012187900,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 428806200,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user clicks \"proceed to checkout\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "proceed to checkout",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29513100,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "\"sign in section\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in section",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:51.596Z",
+        "line": 24,
+        "name": "user logs in and makes a purchase",
+        "description": "",
+        "id": "shoppingcart;user-logs-in-and-makes-a-purchase",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 315070900,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1656344700,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "the user logs in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userLogsIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1570047700,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1080216300,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 524858400,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "user clicks \"proceed to checkout\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "proceed to checkout",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2757382300,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "user fills out \"shipping page details\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "shipping page details",
+                  "offset": 16
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.fillOutMessage(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 40743900,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "\"order confirmation page\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "order confirmation page",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:53:59.546Z",
+        "line": 33,
+        "name": "user adds a new address",
+        "description": "",
+        "id": "shoppingcart;user-adds-a-new-address",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 309524600,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1679129900,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "the user logs in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userLogsIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1640182800,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1009798300,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 471954600,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "user clicks \"proceed to checkout\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "proceed to checkout",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1569700000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "user fills out \"new address form\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "new address form",
+                  "offset": 16
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.fillOutMessage(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 267154000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "\"new address on checkout\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "new address on checkout",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:06.499Z",
+        "line": 42,
+        "name": "users shipping address is different to billing",
+        "description": "",
+        "id": "shoppingcart;users-shipping-address-is-different-to-billing",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 262522100,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1756098000,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "the user logs in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userLogsIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1646914800,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1097622400,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 432963400,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "user clicks \"proceed to checkout\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "proceed to checkout",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1393132400,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "selects a different address for shipping",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.selectDifferentShippingAddress()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 308540600,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "\"new shipping address\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "new shipping address",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:13.405Z",
+        "line": 51,
+        "name": "user adds comment to order",
+        "description": "",
+        "id": "shoppingcart;user-adds-comment-to-order",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 223157300,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1379168200,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "the user logs in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userLogsIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1551038500,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1012029600,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 408853600,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "user clicks \"proceed to checkout\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "proceed to checkout",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1390144000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "user fills out \"message for order\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "message for order",
+                  "offset": 16
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.fillOutMessage(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 127962900,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "\"order message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "order message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:19.501Z",
+        "line": 60,
+        "name": "shopping cart is emptied after log out",
+        "description": "",
+        "id": "shoppingcart;shopping-cart-is-emptied-after-log-out",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 271983800,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1921924700,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "the user logs in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userLogsIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2162147700,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1148240700,
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "the user navigates to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.navToBasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 509447500,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "user clicks \"proceed to checkout\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "proceed to checkout",
+                  "offset": 13
+                }
+              ],
+              "location": "stepdefs.BuyJourneyStepDef.click(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 815422100,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "user logs out and logs back in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.logOutLogIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 50002000,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "basket is empty",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.basketIsEmpty()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:26.383Z",
+        "line": 69,
+        "name": "price is displayed correctly when multiple items in basket",
+        "description": "",
+        "id": "shoppingcart;price-is-displayed-correctly-when-multiple-items-in-basket",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 325063500,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "the user is on the \"home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "home",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1867372000,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "the user logs in",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userLogsIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2225121700,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "the user has an item in their basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.itemInCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2055308600,
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "the user adds a different product to basket",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.userAddsADifferentProduct()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 131510700,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "the price and counter are displayed correctly",
+            "match": {
+              "location": "stepdefs.ShoppingCartStepDef.pricesAndCounterCorrect()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "ShoppingCart",
+    "description": "",
+    "id": "shoppingcart",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/shoppingcart.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-26T09:54:32.992Z",
+        "line": 3,
+        "name": "Sign in as registered user",
+        "description": "",
+        "id": "sign-in;sign-in-as-registered-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 526534700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 994275600,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user signs in with \"registered\" email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "registered",
+                  "offset": 24
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userSignsIn(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 79090100,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user is signed \"in\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userIsSignedIn(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:34.596Z",
+        "line": 8,
+        "name": "Sign in as unregistered user",
+        "description": "",
+        "id": "sign-in;sign-in-as-unregistered-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 524005700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 615633700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user signs in with \"unregistered\" email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "unregistered",
+                  "offset": 24
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userSignsIn(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 29001000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "\"error message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "error message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:35.767Z",
+        "line": 13,
+        "name": "Forgotten Password",
+        "description": "",
+        "id": "sign-in;forgotten-password",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 524591200,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 779105900,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the user clicks forgotten password",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userClicksForgottenPassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 48989600,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "\"confirmation message\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "confirmation message",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:37.123Z",
+        "line": 18,
+        "name": "Sign out",
+        "description": "",
+        "id": "sign-in;sign-out",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 558622700,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1337294100,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user signs out",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userSignsOut()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 199016700,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user is signed \"out\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "out",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.userIsSignedIn(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:39.222Z",
+        "line": 23,
+        "name": "Change account preferences",
+        "description": "",
+        "id": "sign-in;change-account-preferences",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1424521600,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "the user is on the \"account\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "account",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1008459000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "the user changes account settings to opt in to offers and newsletter",
+            "match": {
+              "location": "stepdefs.SignInStepDef.changesAccountSettingsAndOptsIn()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 44001300,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "\"updated account alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updated account alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:41.702Z",
+        "line": 28,
+        "name": "Sign in Using invalid password",
+        "description": "",
+        "id": "sign-in;sign-in-using-invalid-password",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 488883800,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 455895800,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "the user inputs valid email",
+            "match": {
+              "location": "stepdefs.SignInStepDef.InputsEmail()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 493379300,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "enters invalid password",
+            "match": {
+              "location": "stepdefs.SignInStepDef.entersInvalidPassword()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 56533800,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "\"invalid password alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "invalid password alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:43.201Z",
+        "line": 34,
+        "name": "Add new address to account",
+        "description": "",
+        "id": "sign-in;add-new-address-to-account",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1508545700,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "the user is on the \"account\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "account",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 318575700,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "on the address section",
+            "match": {
+              "location": "stepdefs.SignInStepDef.onAddressSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1688192700,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "the user adds a new address",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userAddsNewAddress()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 51983100,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "\"new address\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "new address",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:46.772Z",
+        "line": 40,
+        "name": "signed in with existing account details and have an existing order",
+        "description": "",
+        "id": "sign-in;signed-in-with-existing-account-details-and-have-an-existing-order",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1462380600,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "the user is on the \"account\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "account",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5066370100,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "the user navigates to a pre-existing order and adds a message",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userNavigatesToOrderAndAddsMessage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "\"updated order alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updated order alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-26T09:54:53.311Z",
+        "line": 45,
+        "name": "Use and unregistered email to get forgotten password",
+        "description": "",
+        "id": "sign-in;use-and-unregistered-email-to-get-forgotten-password",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 633512500,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "the user is on the \"sign in\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sign in",
+                  "offset": 20
+                }
+              ],
+              "location": "stepdefs.RegistrationStepDef.theUserOnThePage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 703523100,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "the user inputs and unregistered email in the forgotten password input",
+            "match": {
+              "location": "stepdefs.SignInStepDef.userInputsForgottenPassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 49992200,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "\"unregistered email alert\" is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "unregistered email alert",
+                  "offset": 1
+                }
+              ],
+              "location": "stepdefs.SignInStepDef.isDisplayed(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Sign in",
+    "description": "",
+    "id": "sign-in",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/signin.feature",
+    "tags": []
+  }
+]
