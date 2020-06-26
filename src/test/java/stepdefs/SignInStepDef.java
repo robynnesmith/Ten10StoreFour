@@ -1,7 +1,6 @@
 package stepdefs;
 
 
-
 import config.DriverFactory;
 
 import io.cucumber.java.en.And;
@@ -20,6 +19,8 @@ public class SignInStepDef {
     private ProductPage productPage = new ProductPage();
     private WomenPage womenPage = new WomenPage();
     private ContactUsPage contactuspage = new ContactUsPage();
+    private ShoppingCartPage basketpage = new ShoppingCartPage();
+    private CheckoutPage checkoutPage = new CheckoutPage();
     private PersonalDetails pd = new PersonalDetails("Robin", "Hood", "test@sherwood.com", "ghsjdc@test.com", "LadyM", "Sherwood Forest", "Nottingham", "Minnesota", "12345", "6320864892", "Forest");
 
     @When("^the user signs in with \"([^\"]*)\" email")
@@ -110,6 +111,22 @@ public class SignInStepDef {
                 break;
             case "out of stock message":
                 productPage.verifyOutOfStock();
+                break;
+            case "sign in section":
+                basketpage.isPersonalInformationPageDisplayed();
+                break;
+            case "order confirmation page":
+                checkoutPage.orderConfirmationDisplayed();
+                break;
+            case "new address on checkout":
+                basketpage.clickEditAddressButton();
+                basketpage.newAddressCreated();
+                break;
+            case "new shipping address":
+                basketpage.verifyAddressWasSelected();
+                break;
+            case "order message":
+                basketpage.verifyMessageWasCreated();
                 break;
             default:
                 throw new IllegalArgumentException("Unrecognised object");

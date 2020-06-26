@@ -1,6 +1,7 @@
 package stepdefs;
 
 
+
 import config.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -47,6 +48,9 @@ public class BuyJourneyStepDef {
                 womenPage.clearAll();
                 womenPage.refreshPage();
                 break;
+            case "proceed to checkout":
+                basketpage.clickProceedToCheckout();
+                break;
             default:
                 throw new IllegalArgumentException("Unrecognised item provided");
         }
@@ -80,6 +84,25 @@ public class BuyJourneyStepDef {
                 homepage.clickContactUs();
                 contactuspage.enterMessage();
                 contactuspage.clickSend();
+                break;
+            case "shipping page details":
+                checkoutPage.deliveryAddressSectionDisplayed();
+                checkoutPage.clickProceedToNextSection();
+                checkoutPage.shippingPageDisplayed();
+                checkoutPage.enterShippingComment();
+                checkoutPage.clickProceedToNextSection();
+                checkoutPage.paymentPageDisplayed();
+                checkoutPage.clickPayByBankWire();
+                checkoutPage.agreeToTerms();
+                checkoutPage.confirmOrder();
+                break;
+            case "new address form":
+                basketpage.clickAddNewAddress();
+                basketpage.fillOutNewAddress("321A","TESTER","12345");
+                break;
+            case "message for order":
+                basketpage.clickContinueButton();
+                basketpage.addDeliveryMessage("Hello, this is a test.");
                 break;
             default:
                 throw new IllegalArgumentException("Unrecognised item provided");
