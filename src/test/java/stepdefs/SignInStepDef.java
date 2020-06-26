@@ -1,7 +1,6 @@
 package stepdefs;
 
 
-
 import config.DriverFactory;
 
 import io.cucumber.java.en.And;
@@ -115,6 +114,7 @@ public class SignInStepDef {
                 throw new IllegalArgumentException("Unrecognised object");
         }
     }
+
 
     @When("^the user clicks forgotten password$")
     public void userClicksForgottenPassword(){
